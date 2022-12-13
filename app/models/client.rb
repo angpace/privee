@@ -1,4 +1,5 @@
 class Client < ApplicationRecord
+    has_many :events, dependent: :destroy
 
     has_secure_password
     
