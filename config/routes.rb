@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  resources :events
   resources :clients
   resources :chefs
   # Routing logic: fallback requests for React Router.
