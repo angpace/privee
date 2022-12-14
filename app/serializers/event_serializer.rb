@@ -1,4 +1,3 @@
 class EventSerializer < ActiveModel::Serializer
-  attributes :id, :name, :amount_of_people, :date, :description
-  has_one :client
+  attributes :id, :title, :amount_of_people, :user_id, :description
 end

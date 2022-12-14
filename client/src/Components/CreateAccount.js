@@ -1,7 +1,7 @@
 import Login from "./Login";
 import { useState } from "react";
 
-function CreateAccount ({onLogin, user}) {
+function CreateAccount ({onLogin, currentUser}) {
     // for new client
     const [isChefClicked, setIsChefClicked] = useState(false)
     const [isClientClicked, setIsClientClicked] = useState(false)

@@ -1,11 +1,12 @@
-class CreateChefs < ActiveRecord::Migration[6.1]
+class CreateUsers < ActiveRecord::Migration[6.1]
   def change
-    create_table :chefs do |t|
+    create_table :users do |t|
       t.string :name
       t.string :email
       t.string :password_digest
-      t.integer :phone
+      t.bigint :phone
       t.string :image
+      t.boolean :is_a_chef
       t.string :cuisine
       t.string :last_job
 
