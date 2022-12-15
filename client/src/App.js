@@ -9,14 +9,14 @@ import Events from './Components/Events';
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
 
-  // useEffect(() => {
-  //   fetch(`/me`)
-  //   .then (r =>{
-  //     if (r.ok) {
-  //       r.json().then(user => setCurrentUser(user))
-  //     }
-  //   })
-  // }, [])
+  useEffect(() => {
+    fetch(`/me`)
+    .then (r =>{
+      if (r.ok) {
+        r.json().then(user => setCurrentUser(user))
+      }
+    })
+  }, [])
 
   // // useEffect(() => {
   // //   fetch('/clients')
@@ -37,57 +37,57 @@ function App() {
   // //   })
   // // }, []) 
 
-  // function handleLogOut() {
-  //   fetch('/logout', {
-  //     method: "DELETE"
-  //   }).then(r => {
-  //     if (r.ok) {
-  //       setCurrentUser(null)
-  //       console.log(currentUser)
-  //     }
-  //   })
-  // }
+  function handleLogOut() {
+    fetch('/logout', {
+      method: "DELETE"
+    }).then(r => {
+      if (r.ok) {
+        setCurrentUser(null)
+        console.log(currentUser)
+      }
+    })
+  }
 
-  // function onLogin(user) {
-  //   setCurrentUser(user)
-  //   console.log(user)
-  // }
+  function onLogin(user) {
+    setCurrentUser(user)
+    console.log(user)
+  }
 
-  // function confirmUser (){
-  //   console.log(currentUser)
-  // }
+  function confirmUser (){
+    console.log(currentUser)
+  }
 
   return (
-    // <div>
-    //   <Link to="/">Home </Link>
+    <div>
+      <Link to="/">Home </Link>
 
-    //   {currentUser?
+      {currentUser?
       
-    //   <Link to="/myevents">My Events</Link>
-    //   :
-    //   <div></div>
-    //   }
-    //   {currentUser?
+      <Link to="/myevents">My Events</Link>
       
-    //   <button onClick={handleLogOut}>Log out</button>
-    //   :
-    //   <Link to="/signup">Sign In</Link>
+      :
 
-    //   }
+      <div></div>
+
+      }
+
+      {currentUser?
+      
+      <button onClick={handleLogOut}>Log out</button>
+      :
+      <Link to="/signup">Sign In</Link>
+
+      }
     
 
-    //   <Routes>
+      <Routes>
+      <Route exact path="/myevents" element={<Events currentUser={currentUser} />} />
+      <Route exact path="/" element={<Home/>} />
+      <Route path="/signup" element={<CreateAccount onLogin={onLogin} currentUser={currentUser}/>} />
+      </Routes>
 
-    //   <Route exact path="/myevents" element={<Events currentUser={currentUser} />} />
-
-    //   <Route exact path="/" element={<Home/>} />
-
-    //   <Route path="/signup" element={<CreateAccount onLogin={onLogin} currentUser={currentUser}/>} />
-
-    //   </Routes>
-
-    //   <button onClick={confirmUser}>user</button>
-    <div></div>
+    
+    </div>
   );
 }
 
