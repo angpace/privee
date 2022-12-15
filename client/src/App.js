@@ -73,7 +73,7 @@ function App() {
 
       {currentUser?
       
-      <button onClick={handleLogOut}>Log out</button>
+      <Link onClick={handleLogOut}>Log out</Link>
       :
       <Link to="/signup">Sign In</Link>
 

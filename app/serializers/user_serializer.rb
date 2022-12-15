@@ -1,3 +1,3 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :phone, :image, :is_a_chef, :cuisine, :last_job
+  attributes :id, :name, :email, :phone, :image, :is_a_chef, :cuisine, :last_job, :events
 end
