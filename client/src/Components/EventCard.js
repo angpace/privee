@@ -1,8 +1,14 @@
-function EventCard({e}) {
+function EventCard({e, currentUser}) {
+
 
 
     return (
-        <div>{e.title}</div>
+        <div>
+            <h3>{e.title}</h3>
+            <p>Attending: {e.amount_of_people}</p>
+            <p>{e.description}</p>
+            <button>Edit event</button>
+        </div>
     )
 }
 
