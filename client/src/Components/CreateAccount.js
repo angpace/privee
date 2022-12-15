@@ -36,7 +36,7 @@ function CreateAccount ({onLogin, currentUser}) {
         e.preventDefault()
     
         if ( isChefClicked ) {
-        fetch('/chefs', {
+        fetch('/users', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
@@ -45,6 +45,7 @@ function CreateAccount ({onLogin, currentUser}) {
                 password: newChef.password,
                 phone: newChef.phone,
                 image: newChef.image,
+                is_a_chef: true,
                 cuisine: newChef.cuisine,
                 last_job: newChef.last_job
             })
@@ -53,7 +54,7 @@ function CreateAccount ({onLogin, currentUser}) {
             .then(data => console.log(data)) }
 
         else if ( isClientClicked ) {
-            fetch('/clients', {
+            fetch('/users', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify({
@@ -62,6 +63,7 @@ function CreateAccount ({onLogin, currentUser}) {
                     password: newClient.password,
                     phone: newClient.phone,
                     image: newClient.image,
+                    is_a_chef: false,
                 })
             })
                 .then(r => r.json())
