@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         else
         render json: { error: "Not authorized" }, status: :unauthorized
         end
+
     end
 
     def create
