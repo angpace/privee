@@ -25,6 +25,11 @@ class UsersController < ApplicationController
         head :no_content
     end
 
+    def chefs
+        chefs = User.where(is_a_chef: true)
+        render json: chefs
+    end
+
 
  private 
 

@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   # get "/me", to: "chefs#show"
   get "/me", to: "users#show"
+
+  get "/chefs", to: "users#chefs"
 end

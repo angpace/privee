@@ -1,20 +1,26 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Events from "./Events"
+import ChefCard from "./ChefCard"
 
 function EventCard({event, handleDelete, handleUpdate}) {
     const [edited, setEdited]= useState(false)
-    const [editContent, setEditContent] = useState(null)
     const [editForm, setEditForm] = useState({})
+    const [chefs, setChefs] = useState([])
+    const [showChefs, setShowChefs] = useState(false)
+
+    useEffect(() => {
+        fetch("/chefs")
+            .then(res => res.json())
+            .then(data => setChefs(data))
+    }, [])
 
     function editEvent(e){
-        console.log(e)
         setEdited(!edited) 
     }
 
     function handleChange(e) {
         const { name, value } = e.target 
         setEditForm({ ...editForm, [name]: value })
-        console.log(editForm)
     }
 
 
@@ -37,6 +43,19 @@ function EventCard({event, handleDelete, handleUpdate}) {
             })
             handleDelete(event.id)
         }
+
+        function displayChefs(e){
+            e.preventDefault()
+           setShowChefs(!showChefs)
+        }
+
+        const desc = event.description.split(" ")
+
+        const chefsForRequests = chefs.filter((chef) => desc.includes(chef.cuisine))
+        const displayChefMatch = chefsForRequests.map((chef) => {
+            return <ChefCard chef={chef} key={chef.id} event={event}/>
+        })
+      
 
 
 
@@ -74,6 +93,16 @@ function EventCard({event, handleDelete, handleUpdate}) {
                        :
 
                        <></>
+            }
+            <button onClick={displayChefs}>View Matches</button>
+            {showChefs? 
+
+            <div>
+            {displayChefMatch}
+            </div>
+            :
+            <></>
+
             }
         </div>
     )
