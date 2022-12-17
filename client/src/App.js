@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import CreateAccount from './Components/CreateAccount';
 import Home from './Components/Home';
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route, Link, useNavigate } from "react-router-dom"
 import Events from './Components/Events';
 
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
+  let navigate = useNavigate()
 
   useEffect(() => {
     fetch(`/me`)
@@ -44,6 +45,7 @@ function App() {
       if (r.ok) {
         setCurrentUser(null)
         console.log(currentUser)
+        navigate("/")
       }
     })
   }
@@ -51,10 +53,7 @@ function App() {
   function onLogin(user) {
     setCurrentUser(user)
     console.log(user)
-  }
-
-  function confirmUser (){
-    console.log(currentUser)
+    navigate("/")
   }
 
   return (

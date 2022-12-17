@@ -3,7 +3,6 @@ import { json } from "react-router-dom";
 import EventCard from "./EventCard";
 
 function Events({currentUser}) {
-const [user, setUser] = useState()
 const [events, setEvents] = useState([])
 const [newEvent, setNewEvent] = useState({
     title: "",
@@ -11,6 +10,43 @@ const [newEvent, setNewEvent] = useState({
     user_id: "",
     description: "",
 })
+
+useEffect(() => { 
+    fetch("/events")
+    .then(res => res.json())
+    .then(events => setEvents(events))
+ }, [])
+
+
+    if (!currentUser) {
+  
+        return <div>Loading...</div>
+    
+     }
+
+     if (events.length < 1) {
+
+        return <div>Loading...</div>
+     }
+
+
+     function handleDelete(id) {
+        const updatedEventsArray = events.filter((event) => event.id !== id);
+        setEvents(updatedEventsArray);
+      }
+    
+      function handleUpdate(updated) {
+        const updatedEventsArray = events.map((event) => {
+          if (event.id === updated.id) {
+            return updated;
+          } else {
+            return event;
+          }
+        });
+        setEvents(updatedEventsArray);
+      }
+
+  
 
 function handleChange(e) {
     const { name, value } = e.target 
@@ -31,45 +67,27 @@ function handleChange(e) {
         })
      })
         .then(r => r.json())
-        .then(data => setEvents([...events, data])) }
-    
-
-    useEffect(() => {
-    fetch(`/events`)
-    .then (res => res.json())
-    .then(data => setEvents(data))
+        .then(data => setEvents([...events, data]))
     }
-    ,[])
-
-     
-    // fetch(`/events`)
-    // .then (res => res.json())
-    // .then(data => setEvents(data))
-
-//    const userEvents = events.filter((event) => {
-//     if (event.user_id === currentUser.id)
-//     return  <EventCard e={event} key={event.id} />
-//    }
-
-        const allEvents = events.map((e) => { 
-        return <EventCard e={e} key={e.id} currentUser={currentUser}/>})
-
-
-
-
-
     
 
 
+     const userEvents = events.filter((event) => event.user_id === currentUser.id )
+        //     return  <EventCard event={event} key={event.id} handleRenderingOfEditedEvents={handleRenderingOfEditedEvents}/>
+        //    })
+
+    const renderEvents = userEvents.map(event => {
+        return  <EventCard event={event} setEvents={setEvents} events={events} key={event.id} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
+})
 
     
-
+    
+    
 
 
 return (
 
   <div>
-    <div>{allEvents}</div>
     <h2>Post a new event!</h2>
     <form onSubmit={handleSubmit}>
               <input
@@ -89,6 +107,7 @@ return (
               />
               <button type="submit">Create Event</button>
           </form>
+          {renderEvents}
 </div>
 )}
 

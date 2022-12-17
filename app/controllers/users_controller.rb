@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         else
         render json: { error: "Not authorized" }, status: :unauthorized
         end
+
     end
 
     def create
@@ -22,6 +23,11 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
         user.delete
         head :no_content
+    end
+
+    def chefs
+        chefs = User.where(is_a_chef: true)
+        render json: chefs
     end
 
 
