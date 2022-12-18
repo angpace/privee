@@ -4,11 +4,13 @@ import CreateAccount from './Components/CreateAccount';
 import Home from './Components/Home';
 import { Routes, Route, Link, useNavigate } from "react-router-dom"
 import Events from './Components/Events';
+import { useAlert } from 'react-alert'
 
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   let navigate = useNavigate()
+  const alert = useAlert()
 
   useEffect(() => {
     fetch(`/me`)
@@ -46,6 +48,7 @@ function App() {
         setCurrentUser(null)
         console.log(currentUser)
         navigate("/")
+        alert.show("You've been logged out. Enjoy your day!")
       }
     })
   }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { json } from "react-router-dom";
+// import { json } from "react-router-dom";
 import EventCard from "./EventCard";
+import { useAlert } from "react-alert";
 
 function Events({currentUser}) {
 const [events, setEvents] = useState([])
@@ -10,6 +11,7 @@ const [newEvent, setNewEvent] = useState({
     user_id: "",
     description: "",
 })
+const alert = useAlert()
 
 useEffect(() => { 
     fetch("/events")
@@ -29,6 +31,12 @@ useEffect(() => {
         return <div>Loading...</div>
      }
 
+    //  if ( currentUser.is_a_chef === false ){
+
+    //     return <div>Your a chef</div>
+    //  }
+    const isAChef = currentUser.is_a_chef
+     console.log(isAChef)
 
      function handleDelete(id) {
         const updatedEventsArray = events.filter((event) => event.id !== id);
@@ -68,6 +76,7 @@ function handleChange(e) {
      })
         .then(r => r.json())
         .then(data => setEvents([...events, data]))
+        alert.show("New Event Created")
     }
     
 
@@ -81,34 +90,51 @@ function handleChange(e) {
 })
 
     
+
+    
     
     
 
 
 return (
 
-  <div>
-    <h2>Post a new event!</h2>
-    <form onSubmit={handleSubmit}>
-              <input
-                  onChange={handleChange}
-                  placeholder="Event Name"
-                  name="title"
-              />
-              <input
-                  onChange={handleChange}
-                  placeholder="Amount of Guests"
-                  name="amount_of_people"
-              />
-              <input
-                  onChange={handleChange}
-                  placeholder="Tell us about your Event. Please be sure to inclide your cuisine type."
-                  name="description"
-              />
-              <button type="submit">Create Event</button>
-          </form>
-          {renderEvents}
-</div>
-)}
+  <div> 
+        {!isAChef ?
+
+            <div>
+                    <h2>Post a new event!</h2>
+                    <form onSubmit={handleSubmit}>
+                            <input
+                                onChange={handleChange}
+                                placeholder="Event Name"
+                                name="title"
+                            />
+                            <input
+                                onChange={handleChange}
+                                placeholder="Amount of Guests"
+                                name="amount_of_people"
+                            />
+                            <input
+                                onChange={handleChange}
+                                placeholder="Tell us about your Event. Please be sure to inclide your cuisine type."
+                                name="description"
+                            />
+                            <button type="submit">Create Event</button>
+                        </form>
+                        {renderEvents}
+            </div>
+
+            :
+
+                 <div>
+                    <h2>Your Requested Events</h2>
+                    
+                    
+                </div>
+            
+        }
+    </div>
+    
+    )}
 
 export default Events;
