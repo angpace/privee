@@ -1,6 +1,8 @@
-import { alert } from 'react-alert'
+import { useAlert } from 'react-alert'
 
 function ChefCard({chef, event}){
+
+  const alert = useAlert()
 
     function handleRequest(e){
         e.preventDefault()
@@ -15,9 +17,12 @@ function ChefCard({chef, event}){
             chef_id: chef.id
             })
          })
-            .then(r => r.json())
-            .then(data => console.log(data))
-            alert("Your request has been submitted!")
+            .then(r => {
+                if(r.ok) {
+                    console.log(r)
+                }else {
+                    alert.show("You have already sent a request for this event.")
+                }})
         }
     
 

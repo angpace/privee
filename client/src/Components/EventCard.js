@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
-import Events from "./Events"
+import { useAlert } from "react-alert"
 import ChefCard from "./ChefCard"
+
 
 function EventCard({event, handleDelete, handleUpdate}) {
     const [edited, setEdited]= useState(false)
     const [editForm, setEditForm] = useState({})
     const [chefs, setChefs] = useState([])
     const [showChefs, setShowChefs] = useState(false)
+    const alert = useAlert()
 
     useEffect(() => {
         fetch("/chefs")
@@ -42,6 +44,7 @@ function EventCard({event, handleDelete, handleUpdate}) {
 
             })
             handleDelete(event.id)
+            alert.show("Your event has been deleted.")
         }
 
         function displayChefs(e){
@@ -49,12 +52,12 @@ function EventCard({event, handleDelete, handleUpdate}) {
            setShowChefs(!showChefs)
         }
 
-        const desc = event.description.split(" ")
+        const desc = event.description.toLowerCase().split(" ")
 
-        const chefsForRequests = chefs.filter((chef) => desc.includes(chef.cuisine))
-        const displayChefMatch = chefsForRequests.map((chef) => {
-            return <ChefCard chef={chef} key={chef.id} event={event}/>
-        })
+        const chefsForRequests = chefs.filter((chef) => desc.includes(chef.cuisine.toLowerCase()))
+        const displayChefMatch = chefsForRequests.map((chef) => { 
+            return <ChefCard chef={chef} key={chef.id} event={event}/> }
+        )
       
 
 
