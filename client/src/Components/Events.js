@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // import { json } from "react-router-dom";
 import EventCard from "./EventCard";
 import { useAlert } from "react-alert";
+import RequestContainer from "./RequestContainer";
 
 function Events({currentUser}) {
 const [events, setEvents] = useState([])
@@ -12,6 +13,7 @@ const [newEvent, setNewEvent] = useState({
     description: "",
 })
 const alert = useAlert()
+// const [requests, setRequests] = useState([])
 
 useEffect(() => { 
     fetch("/events")
@@ -31,12 +33,7 @@ useEffect(() => {
         return <div>Loading...</div>
      }
 
-    //  if ( currentUser.is_a_chef === false ){
-
-    //     return <div>Your a chef</div>
-    //  }
-    const isAChef = currentUser.is_a_chef
-     console.log(isAChef)
+    const isAChef = currentUser.is_a_chef 
 
      function handleDelete(id) {
         const updatedEventsArray = events.filter((event) => event.id !== id);
@@ -89,12 +86,6 @@ function handleChange(e) {
         return  <EventCard event={event} setEvents={setEvents} events={events} key={event.id} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
 })
 
-    
-
-    
-    
-    
-
 
 return (
 
@@ -126,12 +117,8 @@ return (
 
             :
 
-                 <div>
-                    <h2>Your Requested Events</h2>
+                    <RequestContainer currentUser={currentUser}/>
                     
-                    
-                </div>
-            
         }
     </div>
     
