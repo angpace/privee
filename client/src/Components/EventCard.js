@@ -54,7 +54,7 @@ function EventCard({event, handleDelete, handleUpdate}) {
 
         const desc = event.description.toLowerCase().split(" ")
 
-        const chefsForRequests = chefs.filter((chef) => desc.includes(chef.cuisine.toLowerCase()))
+        const chefsForRequests = chefs.filter((chef) => chef.cuisine.toLowerCase().includes(desc))
         const displayChefMatch = chefsForRequests.map((chef) => { 
             return <ChefCard chef={chef} key={chef.id} event={event}/> }
         )

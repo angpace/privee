@@ -32,6 +32,6 @@ class RequestsController < ApplicationController
     private 
 
     def request_params
-        params.permit(:event_id, :client_id, :chef_id)
+        params.permit(:event_id, :client_id, :chef_id, :accepted)
     end
 end

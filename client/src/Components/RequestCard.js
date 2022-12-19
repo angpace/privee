@@ -1,6 +1,6 @@
 import { useAlert } from "react-alert";
 
-function RequestCard ({re, event, handleDelete}){
+function RequestCard ({re, event, handleDelete, handleUpdate}){
 const alert = useAlert()
 
 
@@ -12,14 +12,26 @@ function deleteRequest(e){
         handleDelete(re.id)
         alert.show("You have rejected this event.")
     }
+
+
+    function handleAccept(e) {
+        e.preventDefault()
+        fetch(`/requests/${re.id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify( {
+                accepted: true
+            } )})       
+        .then(r => r.json())
+        .then(data => handleUpdate(data))}
+
     
     return (
         <div>
-            <h3>You have been requested for the following events:</h3>
             <h3>{event.title}</h3>
             <p>{event.description}</p>
             <p>{event.date}</p>
-            <button onClick={() => alert.show("Request Accepted")}>Accept</button>
+            <button onClick={handleAccept}>Accept</button>
             <button onClick={deleteRequest}>Reject</button>
 
         </div>
