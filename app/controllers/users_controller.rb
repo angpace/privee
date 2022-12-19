@@ -16,6 +16,10 @@ class UsersController < ApplicationController
 
     def create
         user = User.create!(user_params)
+        user.send_email
+        # UserMailer.with(user: user).user_created
+        # UserMailer.with(user: user).user_created.deliver_now
+
         render json: user
     end
 
