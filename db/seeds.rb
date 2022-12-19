@@ -31,4 +31,4 @@ newyears = Event.create(title: "New Year, New Us", amount_of_people: 30, user_id
 puts "Data seeded!"
 
 #Requests 
-first = Request.create(event_id: angela27.id, client_id: sylvia.id, chef_id: angela.id)
+first = Request.create(event_id: angela27.id, client_id: sylvia.id, chef_id: angela.id, accepted: false)

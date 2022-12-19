@@ -12,14 +12,15 @@ function ChefCard({chef, event}){
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
+            accepted: false,
             event_id: event.id,
             client_id: event.user_id,
-            chef_id: chef.id
+            chef_id: chef.id,
             })
          })
             .then(r => {
                 if(r.ok) {
-                    console.log(r)
+                    alert.show("Request Sent")
                 }else {
                     alert.show("You have already sent a request for this event.")
                 }})
