@@ -3,9 +3,9 @@ import { useAlert } from "react-alert";
 function RequestCard ({re, event, handleDelete, handleUpdate}){
 const alert = useAlert()
 
-if (!event) {
-   return <></>
-}
+// if (!event) {
+//    return "You currently have 0 requests"
+// }
 
 function deleteRequest(e){
     e.preventDefault()

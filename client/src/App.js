@@ -4,7 +4,8 @@ import CreateAccount from './Components/CreateAccount';
 import Home from './Components/Home';
 import { Routes, Route, Link, useNavigate } from "react-router-dom"
 import Events from './Components/Events';
-import { useAlert } from 'react-alert'
+import { useAlert } from 'react-alert';
+import MyProfile from './Components/MyProfile';
 
 
 function App() {
@@ -20,25 +21,6 @@ function App() {
       }
     })
   }, [])
-
-  // // useEffect(() => {
-  // //   fetch('/clients')
-  // //   .then (r =>{
-  // //     if (r.ok) {
-  // //       r.json().then(user => setCurrentUser(user))
-  // //     }
-  // //   })
-  // // }, [])
-
-
-  // // useEffect(() => {
-  // //   fetch('/client')
-  // //   .then (r =>{
-  // //     if (r.ok) {
-  // //       r.json().then(user => setUser(user))
-  // //     }
-  // //   })
-  // // }, []) 
 
   function handleLogOut() {
     fetch('/logout', {
@@ -61,28 +43,27 @@ function App() {
 
   return (
     <div>
-      <Link to="/">Home </Link>
 
       {currentUser?
       
-      <Link to="/myevents">My Events</Link>
+      <div className='navbar'>
+        <Link to="/">Home </Link>
+        <Link to="/myevents">My Events</Link>
+        <Link to="/myprofile">My Profile</Link>
+        <Link onClick={handleLogOut}>Log out</Link>
+      </div>
       
       :
-
-      <div></div>
-
-      }
-
-      {currentUser?
-      
-      <Link onClick={handleLogOut}>Log out</Link>
-      :
-      <Link to="/signup">Sign In</Link>
+        <div className='navbar'>
+        <Link to="/">Home </Link>
+        <Link to="/signup">Sign In</Link> 
+      </div>
 
       }
     
 
       <Routes>
+      <Route exact path="/myprofile" element={<MyProfile currentUser={currentUser} />} />
       <Route exact path="/myevents" element={<Events currentUser={currentUser} />} />
       <Route exact path="/" element={<Home/>} />
       <Route path="/signup" element={<CreateAccount onLogin={onLogin} currentUser={currentUser}/>} />

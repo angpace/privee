@@ -59,13 +59,13 @@ function EventCard({event, handleDelete, handleUpdate}) {
             return <ChefCard chef={chef} key={chef.id} event={event}/> }
         )
       
-
+            console.log(event)
 
 
     return (
         <div>
             <h3>{event.title}</h3>
-            <p>Attending: {event.amount_of_people}</p>
+            <p>Attending: {event.amount_of_people} Date: {event.date}</p>
             <p>{event.description}</p>
             <button onClick={() => editEvent(event.id)}>Edit event</button>
             <button onClick={deleteEvent}>Delete Event</button>
@@ -88,6 +88,11 @@ function EventCard({event, handleDelete, handleUpdate}) {
                                onChange={handleChange}
                                placeholder="Add more details!"
                                name="description"
+                           />
+                            <input
+                               onChange={handleChange}
+                               placeholder="Date"
+                               name="date"
                            />
                            <button>Update Event</button>
                        </form>
