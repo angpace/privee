@@ -4,4 +4,6 @@ class Request < ApplicationRecord
     belongs_to :chef, :class_name => "User", :foreign_key => 'chef_id'
 
     validates :event_id, uniqueness: true
+
+  
 end

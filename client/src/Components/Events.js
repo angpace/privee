@@ -11,6 +11,7 @@ const [newEvent, setNewEvent] = useState({
     amount_of_people: "",
     user_id: "",
     description: "",
+    date: "",
 })
 const alert = useAlert()
 // const [requests, setRequests] = useState([])
@@ -69,6 +70,7 @@ function handleChange(e) {
         amount_of_people: newEvent.amount_of_people,
         user_id: currentUser.id,
         description: newEvent.description,
+        date: newEvent.date,
         })
      })
         .then(r => r.json())
@@ -109,6 +111,11 @@ return (
                                 onChange={handleChange}
                                 placeholder="Tell us about your Event. Please be sure to inclide your cuisine type."
                                 name="description"
+                            />
+                            <input
+                                onChange={handleChange}
+                                placeholder="Date"
+                                name="date"
                             />
                             <button type="submit">Create Event</button>
                         </form>
