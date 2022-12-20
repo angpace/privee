@@ -3,6 +3,9 @@ import { useAlert } from "react-alert";
 function RequestCard ({re, event, handleDelete, handleUpdate}){
 const alert = useAlert()
 
+if (!event) {
+   return <></>
+}
 
 function deleteRequest(e){
     e.preventDefault()
@@ -25,7 +28,8 @@ function deleteRequest(e){
         .then(r => r.json())
         .then(data => handleUpdate(data))}
 
-    
+  console.log(event)
+
     return (
         <div>
             <h3>{event.title}</h3>
