@@ -33,21 +33,35 @@ function RequestContainer ({currentUser}) {
 
     const myRequests = requests.filter((re) => re.chef_id === currentUser.id && re.accepted === false)
 
+    // if (myRequests.length !== 0) 
+    
     const displayRequests = myRequests.map((re) => {
         return < RequestCard re={re} event={re.event} key={re.id} handleDelete={handleDelete} handleUpdate={handleUpdate} />
-})
+}) 
+
 
     const acceptedRequests = requests.filter((re) => re.chef_id === currentUser.id && re.accepted === true)
 
     const displayAccepted = acceptedRequests.map((re) => {
         return <RequestCard re={re} key={re.id} event={re.event} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
     })
+
+    if (displayRequests.length === 0) {
+        return (      
+            <div> 
+            <h2>You currently have no requested events.</h2>
+            <h2>Here are your upcoming events:</h2>
+            {displayAccepted}
+            </div> 
+        )
+    }
+
     
     return (
         <div>
             <h2>You have been requested for the following events:</h2>
             {displayRequests}
-            <h2>Your upcoming events</h2>
+            <h2>Here are your upcoming events:</h2>
             {displayAccepted}
         </div>
     )
