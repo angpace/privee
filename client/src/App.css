@@ -18,7 +18,7 @@ li {
 
 li a{
     text-decoration: none;
-    color: rgb(33, 7, 90);
+    color: rgb(128, 106, 106);
     font-family: "Quicksand";
     font-weight: lighter;
     transition: 1s;
@@ -36,7 +36,7 @@ li a:hover {
     float: left;
     font-size:50px; text-transform:uppercase; color:#222; letter-spacing:2px;
     font-family:"Playfair Display", serif; font-weight:400;
-    color: black;
+    color: rgb(128, 106, 106);
 }
 
 .mainImage {
@@ -55,7 +55,7 @@ li a:hover {
   line-height: 30px;
   text-align: center;
   background-color:  rgba(94, 89, 112, 0.103);
-  color: rgba(19, 80, 25, 0.872);
+  color:rgb(128, 106, 106);
 }
 
 .top-banner::before {
