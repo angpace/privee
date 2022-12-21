@@ -2,11 +2,10 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import CreateAccount from './Components/CreateAccount';
 import Home from './Components/Home';
-import { Routes, Route, Link, useNavigate } from "react-router-dom"
+import { Routes, Route, useNavigate } from "react-router-dom"
 import Events from './Components/Events';
 import { useAlert } from 'react-alert';
 import MyProfile from './Components/MyProfile';
-import logo from "./logo.png"
 
 
 function App() {
@@ -44,21 +43,32 @@ function App() {
 
   return (
     <div>
-      <img className="logo" src={logo} alt="logo"/>
+      <div className='top-banner-text'><span className='top-banner'></span></div>
       {currentUser?
       
-      <div className='nav'>
-        <Link className='navlink' to="/">Home </Link>
-        <Link className='navlink' to="/myevents">My Events</Link>
-        <Link className='navlink' to="/myprofile">My Profile</Link>
-        <Link className='navlink' onClick={handleLogOut}>Log out</Link>
+      <div className='wrapper'>
+      <ul className='nav'>
+      <h1 className='logo'>Privée</h1>
+      <li><a href="/">Home</a></li> 
+      <li><a href="/myevents">My Events</a></li> 
+      <li><a href="/myprofile">My Profile</a></li> 
+      <li><a href="/" onClick={handleLogOut}>Log out</a></li> 
+      </ul>
       </div>
       
       :
-        <div className='nav'>
-        <Link className='navlink' to="/">Home </Link>
-        <Link className='navlink' to="/signup">Sign In</Link> 
-      </div>
+      //   <div className='nav'>
+      //   <Link className='navlink' to="/">Home </Link>
+      //   <Link className='navlink' to="/signup">Sign In</Link> 
+      // </div>
+
+        <div className='wrapper'>
+        <ul className='nav'>
+        <h1 className='logo'>Privée</h1>
+          <li><a href="/">Home</a></li> 
+          <li><a href="/signup">Sign In</a></li> 
+        </ul>
+        </div>
 
       }
     

@@ -10,6 +10,7 @@ const [newEvent, setNewEvent] = useState({
     title: "",
     amount_of_people: "",
     user_id: "",
+    cuisine: "",
     description: "",
     date: "",
 })
@@ -69,6 +70,7 @@ function handleChange(e) {
         title: newEvent.title,
         amount_of_people: newEvent.amount_of_people,
         user_id: currentUser.id,
+        cuisine: newEvent.cuisine,
         description: newEvent.description,
         date: newEvent.date,
         })
@@ -106,6 +108,11 @@ return (
                                 onChange={handleChange}
                                 placeholder="Amount of Guests"
                                 name="amount_of_people"
+                            />
+                            <input
+                                onChange={handleChange}
+                                placeholder="Preferred Cuisine"
+                                name="cuisine"
                             />
                             <input
                                 onChange={handleChange}

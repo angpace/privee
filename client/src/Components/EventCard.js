@@ -52,9 +52,10 @@ function EventCard({event, handleDelete, handleUpdate}) {
            setShowChefs(!showChefs)
         }
 
-        const desc = event.description.toLowerCase().split(" ")
 
-        const chefsForRequests = chefs.filter((chef) => chef.cuisine.toLowerCase().includes(desc))
+        const cuisine = event.cuisine.toLowerCase().split(" ")
+
+        const chefsForRequests = chefs.filter((chef) => chef.cuisine.toLowerCase().includes(cuisine))
         const displayChefMatch = chefsForRequests.map((chef) => { 
             return <ChefCard chef={chef} key={chef.id} event={event}/> }
         )
@@ -64,7 +65,8 @@ function EventCard({event, handleDelete, handleUpdate}) {
         <div>
             <h3>{event.title}</h3>
             <p>Attending: {event.amount_of_people} Date: {event.date}</p>
-            <p>{event.description}</p>
+            <p>Cuisine: {event.cuisine}</p>
+            <p>Details: {event.description}</p>
             <button onClick={() => editEvent(event.id)}>Edit event</button>
             <button onClick={deleteEvent}>Delete Event</button>
             {edited?
@@ -81,6 +83,11 @@ function EventCard({event, handleDelete, handleUpdate}) {
                                onChange={handleChange}
                                placeholder="New Amount of Guests"
                                name="amount_of_people"
+                           />
+                            <input
+                               onChange={handleChange}
+                               placeholder="Cuisine"
+                               name="cuisine"
                            />
                            <input
                                onChange={handleChange}
