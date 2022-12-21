@@ -46,7 +46,20 @@ function RequestContainer ({currentUser}) {
         return <RequestCard re={re} key={re.id} event={re.event} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
     })
 
-    if (displayRequests.length === 0) {
+    if (displayAccepted.length === 0 && displayRequests.length > 0) {
+        return (      
+            <div> 
+            <h2>You have been requested for the following events:</h2>
+            {displayRequests}
+            </div> 
+        )
+    } else if (displayRequests.length === 0 && displayAccepted.length === 0) {
+        return (
+        <div>
+            <h2>You currently have no upcoming events.</h2>
+        </div>
+        )
+    } else if (displayRequests.length === 0 && displayAccepted.length > 0 ) {
         return (      
             <div> 
             <h2>You currently have no requested events.</h2>
@@ -55,7 +68,6 @@ function RequestContainer ({currentUser}) {
             </div> 
         )
     }
-
     
     return (
         <div>

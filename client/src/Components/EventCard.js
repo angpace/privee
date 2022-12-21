@@ -58,8 +58,6 @@ function EventCard({event, handleDelete, handleUpdate}) {
         const displayChefMatch = chefsForRequests.map((chef) => { 
             return <ChefCard chef={chef} key={chef.id} event={event}/> }
         )
-      
-            console.log(event)
 
 
     return (

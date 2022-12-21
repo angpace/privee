@@ -6,6 +6,7 @@ import { Routes, Route, Link, useNavigate } from "react-router-dom"
 import Events from './Components/Events';
 import { useAlert } from 'react-alert';
 import MyProfile from './Components/MyProfile';
+import logo from "./logo.png"
 
 
 function App() {
@@ -43,20 +44,20 @@ function App() {
 
   return (
     <div>
-
+      <img className="logo" src={logo} alt="logo"/>
       {currentUser?
       
-      <div className='navbar'>
-        <Link to="/">Home </Link>
-        <Link to="/myevents">My Events</Link>
-        <Link to="/myprofile">My Profile</Link>
-        <Link onClick={handleLogOut}>Log out</Link>
+      <div className='nav'>
+        <Link className='navlink' to="/">Home </Link>
+        <Link className='navlink' to="/myevents">My Events</Link>
+        <Link className='navlink' to="/myprofile">My Profile</Link>
+        <Link className='navlink' onClick={handleLogOut}>Log out</Link>
       </div>
       
       :
-        <div className='navbar'>
-        <Link to="/">Home </Link>
-        <Link to="/signup">Sign In</Link> 
+        <div className='nav'>
+        <Link className='navlink' to="/">Home </Link>
+        <Link className='navlink' to="/signup">Sign In</Link> 
       </div>
 
       }
