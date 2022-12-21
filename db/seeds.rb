@@ -23,10 +23,10 @@ phone: 7187026960, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9G
  image: "https://www.akc.org/wp-content/uploads/2017/11/Golden-Retriever-Puppy.jpg", is_a_chef: false, password: "123456")
 
 #Events
-angela27 = Event.create(title: "Angelas Bday Bash", amount_of_people: 10, user_id: sylvia.id, description: "I want to throw a party for my favorite daughter!", date: "September 11th, 2023")
-kevin27 = Event.create(title: "Kevins Surprise Party", amount_of_people: 4, user_id: nori.id, description: "I love my dad and I am going to throw him a party.", date: "September 3rd, 2023")
-christmas = Event.create(title: "Jesus Born", amount_of_people: 13, user_id: nori.id, description: "Jesus has risen ya'lll!!!!", date: "December 25th, 2022")
-newyears = Event.create(title: "New Year, New Us", amount_of_people: 30, user_id: sylvia.id, description: "2023!!!", date: "December 31st, 2022")
+angela27 = Event.create(title: "Angelas Bday Bash", amount_of_people: 10, user_id: sylvia.id, description: "My daughter loves Japanese food. I would love to potentially have Sushi, maybe some small warm bites to start- but mainly sushi!", date: "September 11th, 2023", cuisine: "Japanese")
+kevin27 = Event.create(title: "Kevins Surprise Party", amount_of_people: 4, user_id: nori.id, description: "This party is for my dad and  I would love Korean food.", date: "September 3rd, 2023", cuisine: "French")
+christmas = Event.create(title: "Jesus Born", amount_of_people: 13, user_id: nori.id, description: "Jesus has risen ya'll!! We need a Israeli feast.", date: "December 25th, 2022", cuisine: "French")
+newyears = Event.create(title: "New Year, New Us", amount_of_people: 30, user_id: sylvia.id, description: "2023!!! Looking for small bites, potentially with French influence?", date: "December 31st, 2022", cuisine: "French")
 # # birthday = Event.create(name: "Birthday Bash", amount_of_people: 10, date: "Sept. 11, 2023", description: "Looking for japanese cuisine and a small plates! Sushi would be a plus!", client: nori)
 puts "Data seeded!"
 
