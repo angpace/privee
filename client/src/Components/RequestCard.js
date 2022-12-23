@@ -1,6 +1,6 @@
 import { useAlert } from "react-alert";
 
-function RequestCard ({re, event, handleDelete, handleUpdate}){
+function RequestCard ({re, event, handleDelete, handleUpdate, EventHeader}){
 const alert = useAlert()
 
 // if (!event) {
@@ -31,13 +31,15 @@ function deleteRequest(e){
   console.log(event)
 
     return (
-        <div>
-            <h3>{event.title}</h3>
+        <div className="event">
+            <div className="container">
+            <EventHeader>{event.title}</EventHeader>
+            <p>{event.cuisine}</p>
             <p>{event.description}</p>
             <p>{event.date}</p>
             <button onClick={handleAccept}>Accept</button>
             <button onClick={deleteRequest}>Reject</button>
-
+            </div>
         </div>
 
     )

@@ -7,7 +7,7 @@ function MyProfile({currentUser}) {
     return (
         <div>
             <h3>Welcome {currentUser.name}!</h3>
-            <img src={currentUser.image} alt="profile"/>
+            <img style={{width: "600px"}}src={currentUser.image} alt="profile"/>
             <h3>My contact information:</h3>
             <p>{currentUser.email}</p>
             <p>{currentUser.phone}</p>

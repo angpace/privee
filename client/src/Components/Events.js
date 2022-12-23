@@ -3,6 +3,16 @@ import { useEffect, useState } from "react";
 import EventCard from "./EventCard";
 import { useAlert } from "react-alert";
 import RequestContainer from "./RequestContainer";
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+  font-size: 15px;
+  color: rgb(128, 106, 106);
+  border-radius: 2px;
+  padding: 5px;
+  border-color: white;
+  border-width:  thin;
+  `
 
 function Events({currentUser}) {
 const [events, setEvents] = useState([])
@@ -87,7 +97,7 @@ function handleChange(e) {
         //    })
 
     const renderEvents = userEvents.map(event => {
-        return  <EventCard event={event} setEvents={setEvents} events={events} key={event.id} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
+        return  <EventCard event={event} setEvents={setEvents} events={events} key={event.id} handleDelete={handleDelete} handleUpdate={handleUpdate} StyledButton={StyledButton}/>
 })
 
 
@@ -124,7 +134,7 @@ return (
                                 placeholder="Date"
                                 name="date"
                             />
-                            <button type="submit">Create Event</button>
+                            <StyledButton type="submit">Create Event</StyledButton>
                         </form>
                         {renderEvents}
             </div>

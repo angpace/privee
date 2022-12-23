@@ -6,6 +6,7 @@ import { Routes, Route, useNavigate } from "react-router-dom"
 import Events from './Components/Events';
 import { useAlert } from 'react-alert';
 import MyProfile from './Components/MyProfile';
+import Gallery from './Components/Gallery';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
       <ul className='nav'>
       <h1 className='logo'>Privée</h1>
       <li><a href="/">Home</a></li> 
+      <li><a href="/gallery">Gallery</a></li>
       <li><a href="/myevents">My Events</a></li> 
       <li><a href="/myprofile">My Profile</a></li> 
       <li><a href="/" onClick={handleLogOut}>Log out</a></li> 
@@ -57,15 +59,12 @@ function App() {
       </div>
       
       :
-      //   <div className='nav'>
-      //   <Link className='navlink' to="/">Home </Link>
-      //   <Link className='navlink' to="/signup">Sign In</Link> 
-      // </div>
 
         <div className='wrapper'>
         <ul className='nav'>
         <h1 className='logo'>Privée</h1>
           <li><a href="/">Home</a></li> 
+          <li><a href="/gallery">Gallery</a></li> 
           <li><a href="/signup">Sign In</a></li> 
         </ul>
         </div>
@@ -78,6 +77,7 @@ function App() {
       <Route exact path="/myevents" element={<Events currentUser={currentUser} />} />
       <Route exact path="/" element={<Home/>} />
       <Route path="/signup" element={<CreateAccount onLogin={onLogin} currentUser={currentUser}/>} />
+      <Route path="/gallery" element={<Gallery/>} />
       </Routes>
 
     

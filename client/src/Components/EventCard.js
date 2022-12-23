@@ -1,6 +1,26 @@
 import { useEffect, useState } from "react"
 import { useAlert } from "react-alert"
 import ChefCard from "./ChefCard"
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+  font-size: 15px;
+  color: rgb(128, 106, 106);
+  border-radius: 2px;
+  float: right;
+  padding: 5px;
+  border-color: white;
+  border-width:  thin;
+  `
+
+const EventHeader = styled.h2`
+padding-top: 5px;
+margin: 2px auto;
+font-size:30px; color:#222; letter-spacing:1px;
+font-family:"Playfair Display", serif; font-weight:400;
+color: rgb(128, 106, 106);
+
+`
 
 
 function EventCard({event, handleDelete, handleUpdate}) {
@@ -57,18 +77,21 @@ function EventCard({event, handleDelete, handleUpdate}) {
 
         const chefsForRequests = chefs.filter((chef) => chef.cuisine.toLowerCase().includes(cuisine))
         const displayChefMatch = chefsForRequests.map((chef) => { 
-            return <ChefCard chef={chef} key={chef.id} event={event}/> }
+            return <ChefCard chef={chef} key={chef.id} event={event} StyledButton={StyledButton}/> }
         )
 
 
     return (
-        <div>
-            <h3>{event.title}</h3>
-            <p>Attending: {event.amount_of_people} Date: {event.date}</p>
+        <div className="event">
+            <div className="container">
+            <EventHeader>{event.title}</EventHeader>
+            <p>Attending: {event.amount_of_people}</p>
+            <p>Date: {event.date}</p>
             <p>Cuisine: {event.cuisine}</p>
             <p>Details: {event.description}</p>
-            <button onClick={() => editEvent(event.id)}>Edit event</button>
-            <button onClick={deleteEvent}>Delete Event</button>
+            <StyledButton className="con_button" onClick={displayChefs}>{showChefs? "Hide Matches" : "View Matches"}</StyledButton>
+            <StyledButton onClick={deleteEvent}>Delete</StyledButton>
+            <StyledButton onClick={() => editEvent(event.id)}>Edit</StyledButton>
             {edited?
 
             <>
@@ -99,7 +122,7 @@ function EventCard({event, handleDelete, handleUpdate}) {
                                placeholder="Date"
                                name="date"
                            />
-                           <button>Update Event</button>
+                           <StyledButton>Update Event</StyledButton>
                        </form>
 
             </>
@@ -107,16 +130,17 @@ function EventCard({event, handleDelete, handleUpdate}) {
 
                        <></>
             }
-            <button onClick={displayChefs}>View Matches</button>
             {showChefs? 
 
-            <div>
+            <div className="container">
+                <h3 style={{ color: "lightcoral", padding: "2px"}}>Here are your Chef Matches:</h3>
             {displayChefMatch}
             </div>
             :
             <></>
 
             }
+             </div>
         </div>
     )
 }

@@ -28,6 +28,20 @@ kevin27 = Event.create(title: "Kevins Surprise Party", amount_of_people: 4, user
 christmas = Event.create(title: "Jesus Born", amount_of_people: 13, user_id: nori.id, description: "Jesus has risen ya'll!! We need a Israeli feast.", date: "December 25th, 2022", cuisine: "French")
 newyears = Event.create(title: "New Year, New Us", amount_of_people: 30, user_id: sylvia.id, description: "2023!!! Looking for small bites, potentially with French influence?", date: "December 31st, 2022", cuisine: "French")
 # # birthday = Event.create(name: "Birthday Bash", amount_of_people: 10, date: "Sept. 11, 2023", description: "Looking for japanese cuisine and a small plates! Sushi would be a plus!", client: nori)
+
+#Gallery 
+sophie  = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055911874266402907/Sophie.JPEG?width=762&height=955", description: "Chef Sophie Hau")
+tart = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055911874551623860/Tart.JPG?width=716&height=955", description: "Currant Tart by Chef Christina Rasmussen")
+straw = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055917174344134726/Strawberry.png.jpeg?width=954&height=954", description: "Strawberries and Cream")
+yule = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055911875440808026/yulelog.JPG?width=954&height=954", description: "Chocolate Yule Log with Chestnut Praline")
+taco = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055910999741431968/flowertaco.JPG?width=716&height=953", description: "Ube Icecream Sandwhich")
+cake = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055911802615115786/cakeandme.JPG?width=682&height=955", description: "Chef Angela Pace adjusting a cake.")
+butter = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055910900214808586/BreadandButter.JPG?width=764&height=954", description: "Sourdough, Sunflower Seed Butter")
+corn = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055912877267111946/cherrycorn.jpeg", description: "Cherry and Corn")
+tomato = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055911874836824184/tomato.jpg?width=716&height=955", description: "Tomato, Buffalo Ricotta, Basil Oil")
+adam = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055946741851115640/IMG_7576.JPG?width=1192&height=953", description: "Chef Adam Gale")
+chris = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055918274220670977/PHOTO-2022-12-23-13-41-34.jpg?width=606&height=953", description: "Forager Christina Rasmussen")
+
 puts "Data seeded!"
 
 #Requests 
