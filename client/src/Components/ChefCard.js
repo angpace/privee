@@ -1,6 +1,6 @@
 import { useAlert } from 'react-alert'
 
-function ChefCard({chef, event}){
+function ChefCard({chef, event, StyledButton}){
 
   const alert = useAlert()
 
@@ -28,12 +28,14 @@ function ChefCard({chef, event}){
     
 
     return (
-        <div>
+        <div className='event'>
+            <div className='container'>
             <h3>{chef.name}</h3>
             <p>Specializes in: {chef.cuisine} <br/>
                 Expierence recently from: {chef.last_job}
             </p>
-           <button onClick={handleRequest}>Send Event Request</button>
+           <StyledButton onClick={handleRequest}>Send Event Request</StyledButton>
+           </div>
         </div>
     )
 }
