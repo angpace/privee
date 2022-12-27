@@ -52,9 +52,13 @@ function App() {
       <h1 className='logo'>Privée</h1>
       <li><a href="/">Home</a></li> 
       <li><a href="/gallery">Gallery</a></li>
-      <li><a href="/myevents">My Events</a></li> 
-      <li><a href="/myprofile">My Profile</a></li> 
-      <li><a href="/" onClick={handleLogOut}>Log out</a></li> 
+      <li className="dropbtn"><a href="/myprofile">My Account</a> 
+          <div class="dropdown-content">
+            <a href="/myprofile">My Profile</a>
+            <a href="/myevents">My Events</a>
+            <a href="/" onClick={handleLogOut}>Log out</a>
+          </div>
+        </li>
       </ul>
       </div>
       

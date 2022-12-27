@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react"
-import PhotoCard from "./PhotoCard";
-import styled from "styled-components";
+import PhotoCard from "./PhotoCard"
+import styled from "styled-components"
 
 
   const EventHeader = styled.h1`
   padding-top: 5px;
   margin: 2px center;
-  position: relative;
+  position: relative; 
   left: 40%;
   font-size:50px; text-transform:uppercase; color:#222; letter-spacing:2px;
   font-family:"Playfair Display", serif; font-weight:400;
   color: rgb(128, 106, 106);
-  
   `
 
 function Gallery(){
@@ -32,8 +31,10 @@ function Gallery(){
 
     return (
 
-        <div >
+        <div>
+        <div>
         <EventHeader>Gallery</EventHeader>
+         </div>
         <div className="gallery">
         {displayPhotos}
         </div>
