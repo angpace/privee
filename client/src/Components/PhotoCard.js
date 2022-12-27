@@ -1,9 +1,10 @@
 import styled from "styled-components"
 
 const StyledImg = styled.img`
-  max-height: 400px;
-  border-radius: 60px;
-  padding: 10px;
+  height: 350px;
+  min-width: 300px;
+  border-radius: 10px;
+  /* padding: 10px; */
   border-color: white;
   border-width:  thin;
   `
@@ -12,9 +13,11 @@ function PhotoCard ({photo}) {
 
     return (
 
-        <div>
-            <StyledImg src={photo.image}></StyledImg>
-            <p>{photo.description}</p>
+        <div className="gal_container">
+            <StyledImg className="image" src={photo.image}></StyledImg>
+            <div className="overlay">{photo.description}
+            {/* <p className="text">{photo.description}</p> */}
+            </div>
         </div>
     )
 }
