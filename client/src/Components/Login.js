@@ -1,7 +1,7 @@
 import { useState } from "react"
 // import Input from "./Input"
 
-function Login({onLogin}) {
+function Login({onLogin, setIsContainerActive}) {
     const [login, setLogin] = useState({
         email: "",
         password: "",
@@ -28,12 +28,14 @@ function Login({onLogin}) {
         })
         .then(res => res.json())
         .then(data => onLogin(data))}
+        
 
     return (
+        <div class="form-container sign-in-container">
+          <div>
+        <h3>Login below</h3>
         <div>
-        <h2>Login below</h2>
-        <div>
-            <form onSubmit={handleLogin}>
+            <form action="#" onSubmit={handleLogin}>
                 <input
                     onChange={handleChange}
                     type="email"
@@ -48,6 +50,7 @@ function Login({onLogin}) {
                 />
                 <button type="submit">Login</button>
             </form>
+            </div>
         </div>
     </div>
     )

@@ -4,13 +4,17 @@ import ChefCard from "./ChefCard"
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  font-size: 15px;
-  color: rgb(128, 106, 106);
-  border-radius: 2px;
-  float: right;
-  padding: 5px;
-  border-color: white;
-  border-width:  thin;
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 5px 10px;
+	letter-spacing: 1px;
+    float: right;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
   `
 
 const EventHeader = styled.h2`

@@ -15,7 +15,7 @@ function PhotoCard ({photo}) {
 
         <div className="gal_container">
             <StyledImg className="image" src={photo.image}></StyledImg>
-            <div className="overlay">{photo.description}
+            <div className="overlayforGallery">{photo.description}
             {/* <p className="text">{photo.description}</p> */}
             </div>
         </div>
