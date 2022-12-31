@@ -31,7 +31,7 @@ function Login({onLogin, setIsContainerActive}) {
         
 
     return (
-        <div class="form-container sign-in-container">
+        <div className="form-container sign-in-container">
           <div>
         <h3>Login below</h3>
         <div>

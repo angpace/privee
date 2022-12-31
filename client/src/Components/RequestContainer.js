@@ -13,7 +13,6 @@ color: rgb(128, 106, 106);
 
 function RequestContainer ({currentUser}) {
     const [requests, setRequests] = useState([])
-    const [accepted, setAccepted] = useState(false)
 
     useEffect(() => {
         fetch("/requests")
@@ -39,7 +38,6 @@ function RequestContainer ({currentUser}) {
             }
           });
           setRequests(updatedRequestsArray);
-          setAccepted(!accepted)
         }
 
 
@@ -48,14 +46,14 @@ function RequestContainer ({currentUser}) {
     // if (myRequests.length !== 0) 
     
     const displayRequests = myRequests.map((re) => {
-        return < RequestCard re={re} event={re.event} key={re.id} handleDelete={handleDelete} handleUpdate={handleUpdate} EventHeader={EventHeader} accepted={accepted}/>
+        return < RequestCard re={re} event={re.event} key={re.id} handleDelete={handleDelete} handleUpdate={handleUpdate} EventHeader={EventHeader}/>
 }) 
 
 
     const acceptedRequests = requests.filter((re) => re.chef_id === currentUser.id && re.accepted === true)
 
     const displayAccepted = acceptedRequests.map((re) => {
-        return <RequestCard re={re} key={re.id} event={re.event} handleDelete={handleDelete} handleUpdate={handleUpdate} EventHeader={EventHeader} accepted={accepted}/> 
+        return <RequestCard re={re} key={re.id} event={re.event} handleDelete={handleDelete} handleUpdate={handleUpdate} EventHeader={EventHeader} /> 
     })
 
     if (displayAccepted.length === 0 && displayRequests.length > 0) {

@@ -402,7 +402,7 @@ button {
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
-	padding: 12px 45px;
+	padding: 12px 15px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
@@ -459,6 +459,7 @@ input {
 	top: 0;
 	height: 100%;
 	transition: all 0.6s ease-in-out;
+	width: 100%;
 }
 
 .sign-in-container {
@@ -476,6 +477,7 @@ input {
 	width: 50%;
 	opacity: 0;
 	z-index: 1;
+	padding: 5px;
 }
 
 .logincontainer.right-panel-active .sign-up-container {
