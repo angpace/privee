@@ -46,7 +46,7 @@ function RequestContainer ({currentUser}) {
     // if (myRequests.length !== 0) 
     
     const displayRequests = myRequests.map((re) => {
-        return < RequestCard re={re} event={re.event} key={re.id} handleDelete={handleDelete} handleUpdate={handleUpdate} EventHeader={EventHeader} />
+        return < RequestCard re={re} event={re.event} key={re.id} handleDelete={handleDelete} handleUpdate={handleUpdate} EventHeader={EventHeader}/>
 }) 
 
 

@@ -89,19 +89,21 @@ function CreateAccount ({onLogin, currentUser}) {
         <div className={`logincontainer${isSignUp ? " right-panel-active" : ""}`}>
             <Login onLogin={onLogin}/>
 
-            <div class="form-container sign-up-container" >
+            <div className="form-container sign-up-container" >
                 <form>
                     <div onClick={handleRadioChoice}>
-                    <strong>Select an Account Type</strong>
+                     <strong>Select an Account Type</strong>
                                 <input type="radio" name="user" value="chef" />Chef
-                                <input type="radio" name="user" value="client" />Client
-                    </div>
-                    
+                                 <input type="radio" name="user" value="client" />Client
+                 </div>
+                 </form>
+                     
     
             {isChefClicked? 
 
-            <div>
+            <div className="form-container">
           <form onSubmit={handleSubmit}>
+            <p>Enter your details below</p>
               <input
                   onChange={handleChange}
                   placeholder="Name"
@@ -144,7 +146,9 @@ function CreateAccount ({onLogin, currentUser}) {
                   name="last_job"
               />
               <button type="submit">Create Account</button>
+              <button onClick={() => setIsChefClicked(!isChefClicked)}>⬅</button>
             </form>
+            
           </div>
                 
                 :
@@ -153,8 +157,9 @@ function CreateAccount ({onLogin, currentUser}) {
         }
             {isClientClicked? 
 
-             <div>
+             <div className="form-container">
                     <form onSubmit={handleSubmit}>
+                        <p>Enter your details below</p>
                 <input
                     onChange={handleChange}
                     placeholder="Name"
@@ -185,6 +190,7 @@ function CreateAccount ({onLogin, currentUser}) {
                     name="image"
                 />
                 <button type="submit">Create Account</button>
+                <button onClick={() => setIsClientClicked(!isClientClicked)}>⬅</button>
             </form>
          </div>
                     
@@ -193,19 +199,18 @@ function CreateAccount ({onLogin, currentUser}) {
                     <div></div>
 
          }
-         </form>
          </div>
-        <div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
+        <div className="overlay-container">
+		<div className="overlay">
+			<div className="overlay-panel overlay-left">
 				<h1>Welcome In!</h1>
 				<p>We're so glad to have you. Login in now.</p>
-				<button class="ghost" onClick={() => setIsSignUp(!isSignUp)} id="signIn">Sign In</button>
+				<button className="ghost" onClick={() => setIsSignUp(!isSignUp)} id="signIn">Sign In</button>
 			</div>
-			<div class="overlay-panel overlay-right">
+			<div className="overlay-panel overlay-right">
 				<h1>Hello, Foodie!</h1>
 				<p>Create an account and make every meal your best.</p>
-				<button class="ghost" onClick={() => setIsSignUp(!isSignUp)} id="signUp">Sign Up</button>
+				<button className="ghost" onClick={() => setIsSignUp(!isSignUp)} id="signUp">Sign Up</button>
 			</div>
 		</div>
 	</div>
