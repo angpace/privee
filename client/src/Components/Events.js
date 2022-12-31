@@ -6,12 +6,16 @@ import RequestContainer from "./RequestContainer";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  font-size: 15px;
-  color: rgb(128, 106, 106);
-  border-radius: 2px;
-  padding: 5px;
-  border-color: white;
-  border-width:  thin;
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px 10px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
   `
 
 function Events({currentUser}) {
@@ -97,7 +101,7 @@ function handleChange(e) {
         //    })
 
     const renderEvents = userEvents.map(event => {
-        return  <EventCard event={event} setEvents={setEvents} events={events} key={event.id} handleDelete={handleDelete} handleUpdate={handleUpdate} StyledButton={StyledButton}/>
+        return  <EventCard event={event} setEvents={setEvents} events={events} key={event.id} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
 })
 
 

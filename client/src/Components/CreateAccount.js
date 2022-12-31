@@ -5,6 +5,7 @@ function CreateAccount ({onLogin, currentUser}) {
     // for new client
     const [isChefClicked, setIsChefClicked] = useState(false)
     const [isClientClicked, setIsClientClicked] = useState(false)
+    const [isSignUp, setIsSignUp] = useState(false)
     const [newClient, setNewClient] = useState({
         name: "",
         email: "",
@@ -85,16 +86,18 @@ function CreateAccount ({onLogin, currentUser}) {
 
     return (
     
-        <div>
+        <div className={`logincontainer${isSignUp ? " right-panel-active" : ""}`}>
             <Login onLogin={onLogin}/>
-            <h2>Create an Account Here</h2>
-            <div onClick={handleRadioChoice}>
-            <div>What account are you looking to create?</div>
-            <input type="radio" name="user" value="chef" />Chef
-            <input type="radio" name="user" value="client" />Client
-            </div>
+
+            <div class="form-container sign-up-container" >
+                <form>
+                    <div onClick={handleRadioChoice}>
+                    <strong>Select an Account Type</strong>
+                                <input type="radio" name="user" value="chef" />Chef
+                                <input type="radio" name="user" value="client" />Client
+                    </div>
+                    
     
-            
             {isChefClicked? 
 
             <div>
@@ -131,7 +134,7 @@ function CreateAccount ({onLogin, currentUser}) {
               <input
                   onChange={handleChange}
                   type="text"
-                  placeholder="Preferred Cuisine"
+                  placeholder="Specialized Cuisine"
                   name="cuisine"
               />
               <input
@@ -141,7 +144,7 @@ function CreateAccount ({onLogin, currentUser}) {
                   name="last_job"
               />
               <button type="submit">Create Account</button>
-          </form>
+            </form>
           </div>
                 
                 :
@@ -190,7 +193,25 @@ function CreateAccount ({onLogin, currentUser}) {
                     <div></div>
 
          }
-     </div>
+         </form>
+         </div>
+        <div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome In!</h1>
+				<p>We're so glad to have you. Login in now.</p>
+				<button class="ghost" onClick={() => setIsSignUp(!isSignUp)} id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Foodie!</h1>
+				<p>Create an account and make every meal your best.</p>
+				<button class="ghost" onClick={() => setIsSignUp(!isSignUp)} id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+    </div>
+    
+    
     
     )}
 
