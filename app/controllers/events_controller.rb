@@ -13,6 +13,8 @@ class EventsController < ApplicationController
      def create
         event = Event.create!(event_params)
         render json: event
+      rescue ActiveRecord::RecordInvalid => e
+         render json: { error: e.record.errors.full_messages }, status: :unprocessable_entity
      end
 
      def update
