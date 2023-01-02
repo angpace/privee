@@ -89,9 +89,17 @@ function handleChange(e) {
         date: newEvent.date,
         })
      })
-        .then(r => r.json())
-        .then(data => setEvents([...events, data]))
-        alert.show("New Event Created")
+        .then(r => {
+          if (r.status === 200){
+            r.json()
+            .then(data => console.log(data))
+            alert.show("New Event Created")
+        }
+        else if (r.status === 422) {
+            r.json()
+            .then(data => alert.show(data.error))
+        }}
+         )
     }
     
 
@@ -111,6 +119,7 @@ return (
         {!isAChef ?
 
             <div>
+               <h1>Your Event</h1>
                     <h2>Post a new event!</h2>
                     <form onSubmit={handleSubmit}>
                             <input
