@@ -1,8 +1,11 @@
 import Login from "./Login";
 import { useState } from "react";
+import { useAlert } from 'react-alert';
 
 function CreateAccount ({onLogin, currentUser}) {
     // for new client
+    const alert = useAlert()
+    const [errors, setErrors] = useState([])
     const [isChefClicked, setIsChefClicked] = useState(false)
     const [isClientClicked, setIsClientClicked] = useState(false)
     const [isSignUp, setIsSignUp] = useState(false)
@@ -13,6 +16,10 @@ function CreateAccount ({onLogin, currentUser}) {
         phone: "",
         image: "",
     })
+
+    function throwErrors(err){
+        err.map(error => alert.show(error))
+    }
     // for new Chef
     const [newChef, setNewChef] = useState({
         name: "",
@@ -23,7 +30,7 @@ function CreateAccount ({onLogin, currentUser}) {
         cuisine: "",
         last_job: "",
     })
-  
+
     function handleChange(e) {
         const { name, value } = e.target 
         if ( isChefClicked ) {
@@ -32,6 +39,7 @@ function CreateAccount ({onLogin, currentUser}) {
             setNewClient({...newClient, [name]: value})
         }
     }
+
   
     function handleSubmit(e) {
         e.preventDefault()
@@ -51,8 +59,18 @@ function CreateAccount ({onLogin, currentUser}) {
                 last_job: newChef.last_job
             })
         })
-            .then(r => r.json())
-            .then(data => console.log(data)) }
+            .then(r => {
+                if (r.status === 200){
+                    r.json()
+                    .then(data => console.log(data))
+                }
+                else if (r.status === 422) {
+                    r.json()
+                    .then(data => setErrors(data.error))
+                    throwErrors(errors)
+                }
+            })
+        }
 
         else if ( isClientClicked ) {
             fetch('/users', {
@@ -203,7 +221,7 @@ function CreateAccount ({onLogin, currentUser}) {
         <div className="overlay-container">
 		<div className="overlay">
 			<div className="overlay-panel overlay-left">
-				<h1>Welcome In!</h1>
+				<h1>Welcome!</h1>
 				<p>We're so glad to have you. Login in now.</p>
 				<button className="ghost" onClick={() => setIsSignUp(!isSignUp)} id="signIn">Sign In</button>
 			</div>

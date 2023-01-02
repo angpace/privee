@@ -1,7 +1,10 @@
 import { useState } from "react"
-// import Input from "./Input"
+import { useNavigate } from "react-router-dom"
+import { useAlert } from 'react-alert';
 
-function Login({onLogin, setIsContainerActive}) {
+function Login({onLogin}) {
+  let navigate = useNavigate()
+  const alert = useAlert()
     const [login, setLogin] = useState({
         email: "",
         password: "",
@@ -26,8 +29,23 @@ function Login({onLogin, setIsContainerActive}) {
             password: login.password
           })
         })
-        .then(res => res.json())
-        .then(data => onLogin(data))}
+        .then(res => {
+          if (res.status === 200) {
+            console.log("yay")
+            res.json()
+            .then(data => onLogin(data))
+            navigate('/')
+          }
+          else if (res.status === 401) { 
+            alert.show("Invalid Username or Password.")
+        
+          }
+          else {
+            console.log("yikes")
+          }})
+
+        }
+        
         
 
     return (
