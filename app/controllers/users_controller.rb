@@ -16,11 +16,10 @@ class UsersController < ApplicationController
 
     def create
         user = User.create!(user_params)
-        user.send_email
-        # UserMailer.with(user: user).user_created
-        # UserMailer.with(user: user).user_created.deliver_now
-
-        render json: user
+        user.send_email 
+        render json: user, status: :created
+        rescue ActiveRecord::RecordInvalid => e
+            render json: { error: e.record.errors.full_messages }, status: :unprocessable_entity
     end
 
     def destroy

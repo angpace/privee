@@ -53,7 +53,7 @@ function App() {
       <li><a href="/">Home</a></li> 
       <li><a href="/gallery">Gallery</a></li>
       <li className="dropbtn"><a href="/myprofile">My Account</a> 
-          <div class="dropdown-content">
+          <div className="dropdown-content">
             <a href="/myprofile">My Profile</a>
             <a href="/myevents">My Events</a>
             <a href="/" onClick={handleLogOut}>Log out</a>

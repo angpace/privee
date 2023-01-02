@@ -4,6 +4,10 @@ class User < ApplicationRecord
     has_many :events
     has_many :requests
 
+    validates :email, uniqueness: true
+    validates :name, presence: true 
+    validates :password, presence: true
+
     require 'sendgrid-ruby'
         include SendGrid
 
