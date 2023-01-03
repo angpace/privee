@@ -22,7 +22,6 @@ margin: 2px auto;
 font-size:30px; color:#222; letter-spacing:1px;
 font-family:"Playfair Display", serif; font-weight:400;
 color: rgb(128, 106, 106);
-
 `
 
 

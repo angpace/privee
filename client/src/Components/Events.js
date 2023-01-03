@@ -49,13 +49,13 @@ useEffect(() => {
 
     if (!currentUser) {
   
-        return <img className="loader" src="https://cdn.dribbble.com/users/2140642/screenshots/4301537/rodrigosloader.gif"></img>
+        return <img alt="fryingPan" className="loader" src="https://cdn.dribbble.com/users/2140642/screenshots/4301537/rodrigosloader.gif"></img>
     
      }
 
      if (events.length < 1) {
 
-        return <img className="loader" src="https://cdn.dribbble.com/users/2140642/screenshots/4301537/rodrigosloader.gif"></img>
+        return <img alt="fryingPan" className="loader" src="https://cdn.dribbble.com/users/2140642/screenshots/4301537/rodrigosloader.gif"></img>
      }
 
     const isAChef = currentUser.is_a_chef 
