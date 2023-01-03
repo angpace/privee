@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
     has_many :events
     has_many :requests
+    has_many :reviews
 
     validates :email, uniqueness: true
     validates :name, presence: true 
