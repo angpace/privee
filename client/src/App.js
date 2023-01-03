@@ -7,6 +7,7 @@ import Events from './Components/Events';
 import { useAlert } from 'react-alert';
 import MyProfile from './Components/MyProfile';
 import Gallery from './Components/Gallery';
+import About from './Components/About';
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
       <ul className='nav'>
       <h1 className='logo'>Privée</h1>
       <li><a href="/">Home</a></li> 
+      <li><a href="/about">About</a></li> 
       <li><a href="/gallery">Gallery</a></li>
       <li className="dropbtn"><a href="/myprofile">My Account</a> 
           <div className="dropdown-content">
@@ -68,6 +70,7 @@ function App() {
         <ul className='nav'>
         <h1 className='logo'>Privée</h1>
           <li><a href="/">Home</a></li> 
+          <li><a href="/about">About</a></li> 
           <li><a href="/gallery">Gallery</a></li> 
           <li><a href="/signup">Sign In</a></li> 
         </ul>
@@ -82,6 +85,7 @@ function App() {
       <Route exact path="/" element={<Home/>} />
       <Route path="/signup" element={<CreateAccount onLogin={onLogin} currentUser={currentUser}/>} />
       <Route path="/gallery" element={<Gallery/>} />
+      <Route path="/about" element={<About/>} />
       </Routes>
 
     

@@ -42,6 +42,9 @@ tomato = Photo.create(image: "https://media.discordapp.net/attachments/105591053
 adam = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055946741851115640/IMG_7576.JPG?width=1192&height=953", description: "Chef Adam Gale")
 chris = Photo.create(image: "https://media.discordapp.net/attachments/1055910530528850011/1055918274220670977/PHOTO-2022-12-23-13-41-34.jpg?width=606&height=953", description: "Forager Christina Rasmussen")
 
+#Reviews
+testReview = Review.create(title: "Would 100% Recommend!", description: "The event was perfect. Angela was able to nail exactly what I wanted!", rating: 5, client_id: sylvia.id, chef_id: angela.id, event_id: newyears.id)
+
 puts "Data seeded!"
 
 #Requests 
