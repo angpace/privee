@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const StyledImg = styled.img`
-  height: 350px;
+  height: 380px;
   min-width: 300px;
   border-radius: 10px;
   /* padding: 10px; */

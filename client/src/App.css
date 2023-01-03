@@ -443,7 +443,7 @@ input {
 .logincontainer {
 	background-color: #fff;
 	border-radius: 20px;
-  	box-shadow: 0 14px 28px rgba(136, 125, 125, 0.25), 
+  	box-shadow: 0 14px 20px rgba(205, 170, 170, 0.25), 
 			0 10px 10px rgba(223, 203, 203, 0.22);
 	position: relative;
 	overflow: hidden;
@@ -515,8 +515,8 @@ input {
 
 .overlay {
 	background: #715e63;
-	background: -webkit-linear-gradient(to right, #94827f, #bc7888);
-	background: linear-gradient(to right, #8b706b, #e792a6);
+	background: -webkit-linear-gradient(to right, #d47f70, #896b71);
+	background: linear-gradient(to right, #cdf0eddb, #7dbdb2);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
