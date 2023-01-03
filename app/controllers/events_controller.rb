@@ -29,6 +29,8 @@ class EventsController < ApplicationController
         head :no_content
      end
 
+     
+
      private 
 
      def event_params
