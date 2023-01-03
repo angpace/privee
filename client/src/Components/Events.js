@@ -19,7 +19,7 @@ const StyledButton = styled.button`
   `
   const EventHeader = styled.h2`
   padding-top: 5px;
-  margin: 2px auto;
+  margin: 10px auto;
   font-size:40px; color:#222; letter-spacing:1px;
   font-family:"Playfair Display", serif; font-weight:400;
   color: rgb(128, 106, 106);
