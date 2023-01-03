@@ -4,11 +4,12 @@ import styled from "styled-components"
 
 
   const EventHeader = styled.h1`
-  padding-top: 5px;
-  margin: 2px center;
-  position: relative; 
-  left: 40%;
-  font-size:50px; text-transform:uppercase; color:#222; letter-spacing:2px;
+  padding-top: 30px;
+  padding-left: 30px;
+  margin: 10px auto;
+  position: relative;
+  /* left: 40%; */
+  font-size:40px; text-transform:uppercase; color:#222; letter-spacing:2px;
   font-family:"Playfair Display", serif; font-weight:400;
   color: rgb(128, 106, 106);
   `
