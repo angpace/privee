@@ -5,12 +5,11 @@ import styled from "styled-components";
 
 const StyledButton = styled.button`
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	/* background-color: #FF4B2B; */
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
-	padding: 5px 10px;
+	padding: 5px 5px ;
 	letter-spacing: 1px;
     float: right;
 	text-transform: uppercase;
@@ -137,7 +136,7 @@ function EventCard({event, handleDelete, handleUpdate}) {
             {showChefs? 
 
             <div className="container">
-                <h3 style={{ color: "lightcoral", padding: "2px"}}>Here are your Chef Matches:</h3>
+                <h2 style={{ color: "lightcoral", padding: "20px"}}>Chefs matched to your event:</h2>
             {displayChefMatch}
             </div>
             :

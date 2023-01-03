@@ -17,9 +17,18 @@ const StyledButton = styled.button`
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
   `
+  const EventHeader = styled.h2`
+  padding-top: 5px;
+  margin: 2px auto;
+  font-size:40px; color:#222; letter-spacing:1px;
+  font-family:"Playfair Display", serif; font-weight:400;
+  color: rgb(128, 106, 106);
+  
+  `
 
 function Events({currentUser}) {
 const [events, setEvents] = useState([])
+const [clicked, setIsClicked] = useState(false)
 const [newEvent, setNewEvent] = useState({
     title: "",
     amount_of_people: "",
@@ -40,13 +49,13 @@ useEffect(() => {
 
     if (!currentUser) {
   
-        return <div>Loading...</div>
+        return <img className="loader" src="https://cdn.dribbble.com/users/2140642/screenshots/4301537/rodrigosloader.gif"></img>
     
      }
 
      if (events.length < 1) {
 
-        return <div>Loading...</div>
+        return <img className="loader" src="https://cdn.dribbble.com/users/2140642/screenshots/4301537/rodrigosloader.gif"></img>
      }
 
     const isAChef = currentUser.is_a_chef 
@@ -113,42 +122,56 @@ function handleChange(e) {
 })
 
 
+
+
 return (
 
   <div> 
         {!isAChef ?
 
             <div>
-               <h1>Your Event</h1>
-                    <h2>Post a new event!</h2>
-                    <form onSubmit={handleSubmit}>
-                            <input
-                                onChange={handleChange}
-                                placeholder="Event Name"
-                                name="title"
-                            />
-                            <input
-                                onChange={handleChange}
-                                placeholder="Amount of Guests"
-                                name="amount_of_people"
-                            />
-                            <input
-                                onChange={handleChange}
-                                placeholder="Preferred Cuisine"
-                                name="cuisine"
-                            />
-                            <input
-                                onChange={handleChange}
-                                placeholder="Tell us about your Event. Please be sure to inclide your cuisine type."
-                                name="description"
-                            />
-                            <input
-                                onChange={handleChange}
-                                placeholder="Date"
-                                name="date"
-                            />
-                            <StyledButton type="submit">Create Event</StyledButton>
-                        </form>
+               <EventHeader>Your Events</EventHeader>
+               <button onClick={() => setIsClicked(!clicked)}>Create a New Event</button>
+               {clicked? 
+
+                <div>
+                  <h3>Enter event details below.</h3>
+                  <form onSubmit={handleSubmit}>
+                          <input
+                              onChange={handleChange}
+                              placeholder="Event Name"
+                              name="title"
+                          />
+                          <input
+                              onChange={handleChange}
+                              placeholder="Amount of Guests"
+                              name="amount_of_people"
+                          />
+                          <input
+                              onChange={handleChange}
+                              placeholder="Preferred Cuisine"
+                              name="cuisine"
+                          />
+                          <input
+                              onChange={handleChange}
+                              placeholder="Tell us about your Event. Please be sure to inclide your cuisine type."
+                              name="description"
+                          />
+                          <input
+                              onChange={handleChange}
+                              placeholder="Date"
+                              name="date"
+                          />
+                          <StyledButton type="submit">Create Event</StyledButton>
+                      </form> 
+                 </div>
+
+                      :
+
+                      <></>
+
+               }
+              
                         {renderEvents}
             </div>
 
