@@ -5,12 +5,14 @@ function MyProfile({currentUser}) {
     }
 
     return (
-        <div>
+        <div className="card">
+            <div className="cardContainer">
             <h3>Welcome {currentUser.name}!</h3>
-            <img style={{width: "600px"}}src={currentUser.image} alt="profile"/>
-            <h3>My contact information:</h3>
+            <img style={{width: "100%"}} src={currentUser.image} alt="profile"/>
+            <h3>My contact information</h3>
             <p>{currentUser.email}</p>
             <p>{currentUser.phone}</p>
+            </div>
         </div>
     )
 }
