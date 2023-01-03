@@ -1,7 +1,7 @@
 function MyProfile({currentUser}) {
 
     if (!currentUser) {
-        return <h1>Loading...</h1>
+        return <img className="loader" src="https://cdn.dribbble.com/users/2140642/screenshots/4301537/rodrigosloader.gif"></img>
     }
 
     return (
