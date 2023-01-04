@@ -49,8 +49,8 @@ function App() {
       {currentUser?
       
       <div className='wrapper'>
+        {/* <img style={{height: "200px", width: "300px", float: "left"}} src={logo}></img> */}
       <ul className='nav'>
-      <h1 className='logo'>Privée</h1>
       <li><a href="/">Home</a></li> 
       <li><a href="/about">About</a></li> 
       <li><a href="/gallery">Gallery</a></li>
@@ -67,8 +67,8 @@ function App() {
       :
 
         <div className='wrapper'>
+        {/* <img src={logo} style={{height: "200px", width: "300px", float: "left"}}></img> */}
         <ul className='nav'>
-        <h1 className='logo'>Privée</h1>
           <li><a href="/">Home</a></li> 
           <li><a href="/about">About</a></li> 
           <li><a href="/gallery">Gallery</a></li> 

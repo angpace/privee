@@ -4,6 +4,7 @@ function About () {
 
     return (
             <div style={{paddingTop: "40px"}} > 
+             {/* <img src={logo} style={{height: "20%", width: "30%"}}></img> */}
                <div className="about-container">
                     <div className="about-content">
                          <h1>What is Privée?</h1>

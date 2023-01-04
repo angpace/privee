@@ -58,7 +58,7 @@ function EventPreview ({event, currentUser, handleUpdate}) {
                    {clicked?
                 
                 <div>
-                    <h2>Enter your review below.</h2>
+                    <h3>Enter your review for <strong>{event.title}</strong> below.</h3>
                     <form onSubmit={handleSubmit}>
                             <input
                                 onChange={handleChange}

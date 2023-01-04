@@ -45,34 +45,35 @@ function MyReviews ({currentUser, userEvents}) {
     
     if (isAChef === false) { 
         return <div>
-             <button onClick={() => setClicked(!clicked)}>Review an Event!</button>
-
-             {clicked? 
-                <div>
-                    <div>
-                        <h3>Which of your events would you like to review?</h3>
-                        {displayClientEvents}
-                    </div>
-                 </div>
-                :
-
-                <></>
-
-             }
              {displayReviews.length > 0 ?
-             <div>
-                    <h2>Posted Notes and Reviews</h2>
-                                {displayReviews}
+             <div className="review-container">
+                    <h2>Posted Reviews</h2>
+                    {displayReviews}
              </div>
              :
 
              <h3>You currently have no reviews</h3>
-    }
+     }
+      <br></br>
+      <button onClick={() => setClicked(!clicked)}>{clicked? "Your Events" : "Review an Event!"}</button>
+
+        {clicked? 
+        <div>
+            <div>
+                <h3>Which of your events would you like to review?</h3>
+                {displayClientEvents}
+            </div>
+            </div>
+        :
+
+        <></>
+
+        }
          </div>
     }
 
     return (
-        <div>
+        <div className="review-container">
             <h2>Notes and Reviews</h2>
             {displayReviews}
         </div>
