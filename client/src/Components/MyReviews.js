@@ -19,8 +19,6 @@ function MyReviews ({currentUser, userEvents}) {
 
     const isAChef = currentUser.is_a_chef 
 
-    console.log(userEvents)
-
     const displayClientEvents = userEvents.map((event) => {
         return <EventPreview currentUser={currentUser} event={event} key={event.id} handleUpdate={handleUpdate}/>
     })
@@ -40,7 +38,6 @@ function MyReviews ({currentUser, userEvents}) {
    
     const filterReviews = reviews.filter((r) => r.client_id === currentUser.id || r.chef_id === currentUser.id)
 
-    console.log(filterReviews)
 
     const displayReviews = filterReviews.map((r) => {
         return <ReviewCard handleDelete={handleDelete} currentUser={currentUser} r={r} key={r.id} />

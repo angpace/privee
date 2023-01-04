@@ -590,4 +590,30 @@ input {
 	padding: 2px 16px;
   }
 
+  .founder_container {
+	width: 90%;
+	margin: auto;
+	height: fit-content;
+	display: flex;
+	background-color: #d47f701d;
+	border-radius: 30px;
+	padding: 30px;
+  }
+
+  .about-container {
+	width: 90%;
+	margin: auto;
+	height: 400px;
+	display: flex;
+	background-color: #d47f7023;
+	border-radius: 30px;
+	padding: 30px;
+	align-items: center;
+	justify-content: space-around;
+	
+  }
+
+  .about-content {
+	max-width: 45%;
+  }
   
