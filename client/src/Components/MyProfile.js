@@ -29,6 +29,7 @@ function MyProfile({currentUser}) {
             <p>{currentUser.email}</p>
             <p>{currentUser.phone}</p>
             </div>
+
         </div>
         <div>
             <MyReviews userEvents={userEvents} currentUser={currentUser}/>
