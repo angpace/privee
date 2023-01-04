@@ -18,10 +18,12 @@ function ReviewCard ({r, currentUser, handleDelete}) {
     if (isAChef === false) {
         return (
             <div>
-            <div>
-                <h3>{r.title} {r.rating}</h3>
-                <p>Event: {r.event.title}</p>
-                <p>{r.description}</p>
+            <div className="reviewCard">
+                <p><strong>{r.title}</strong>
+                <br></br>
+                <br></br>Rating: {r.rating}
+                <br></br>Event: {r.event.title}
+                <br></br>{r.description}</p>
                 <button onClick={deleteReview}>delete</button>
             </div>
             </div>

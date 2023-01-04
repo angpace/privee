@@ -20,7 +20,7 @@ function MyProfile({currentUser}) {
 
 
     return (
-        <div>
+        <div className="profile">
         <div className="card">
             <div className="cardContainer">
             <h3>Welcome {currentUser.name}!</h3>

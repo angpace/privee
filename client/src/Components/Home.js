@@ -1,10 +1,12 @@
 import Strawberry from "./Strawberry.jpeg"
+import logo from './logo.png'
 
 function Home (){
 
 
     return (
         <div className="CSSgal">
+          <img alt="logo"src={logo} style={{height: "20%", width: "30%"}}></img>
         <s id="s1"></s> 
         <s id="s2"></s>
         <s id="s3"></s>
