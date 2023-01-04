@@ -101,7 +101,7 @@ function handleChange(e) {
         .then(r => {
           if (r.status === 200){
             r.json()
-            .then(data => console.log(data))
+            .then(data => setEvents([...events, data]))
             alert.show("New Event Created")
         }
         else if (r.status === 422) {
