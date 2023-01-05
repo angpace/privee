@@ -14,16 +14,16 @@ function Home (){
       
         <div className="slider">
           <div >
-            <img src={Strawberry} alt="straw"/>
+          <img src="https://hips.hearstapps.com/esquire/assets/17/20/1495206144-es-051917-is-noma-worth-it-a.jpg" alt="straw"/>
               </div>
           <div >
-                  <img src={Strawberry} alt="straw"/>
+                  <img src="https://livunltd.com/wp-content/uploads/2022/05/resident.png" alt="straw"/>
               </div>
           <div >
-                  <img src="https://images.getbento.com/accounts/827ee422cf171aa8c5ce37dfb41ba7cd/media/images/61406210726_EMP_Interiors_22121_1.jpg?w=1200&fit=crop&auto=compress,format&h=600" alt="straw"/>
+                  <img src="https://static.dezeen.com/uploads/2018/09/noma-big-architecture-interiors-restaurant-copenhagen-denmark_dezeen_sq.jpg" alt="straw"/>
               </div>
               <div >
-                  <img src="https://images.getbento.com/accounts/827ee422cf171aa8c5ce37dfb41ba7cd/media/images/61406210726_EMP_Interiors_22121_1.jpg?w=1200&fit=crop&auto=compress,format&h=600" alt="straw"/>
+              <img src="https://www.washingtonian.com/wp-content/uploads/2021/04/171101_ilili_Menu-59.jpg" alt="straw"/>
               </div>
         </div>
         

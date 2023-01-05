@@ -32,12 +32,12 @@ function deleteRequest(e){
 
         if (re.accepted === true ) {
             return (
-                <div className="event">
-                    <div className="container">
+                <div >
+                    <div className="event-content">
                             <EventHeader>{event.title}</EventHeader>
-                            <p>{event.cuisine}</p>
-                            <p>{event.description}</p>
-                            <p>{event.date}</p>
+                            <p>{event.cuisine}<br/>
+                            {event.description}<br/>
+                            {event.date}</p>
                                 <button onClick={deleteRequest}>Cancel</button>
                      </div>
                   </div>
@@ -47,12 +47,12 @@ function deleteRequest(e){
 //   console.log(event)
 
     return (
-        <div className="event">
-            <div className="container">
+        <div >
+            <div className="event-content">
                 <EventHeader>{event.title}</EventHeader>
-                <p>{event.cuisine}</p>
-                <p>{event.description}</p>
-                <p>{event.date}</p>
+                <p>{event.cuisine}<br/>
+                {event.description}<br/>
+                {event.date}</p>
                     <button onClick={handleAccept}>Accept</button>
                     <button onClick={deleteRequest}>Reject</button>
             </div>

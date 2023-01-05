@@ -25,7 +25,7 @@ class EventsController < ApplicationController
 
      def destroy
         event = Event.find(params[:id])
-        event.delete
+        event.destroy
         head :no_content
      end
 

@@ -58,24 +58,26 @@ function RequestContainer ({currentUser}) {
 
     if (displayAccepted.length === 0 && displayRequests.length > 0) {
         return (      
-            <div className="event"> 
+            <div> 
             <EventHeader>You have been requested for the following events:</EventHeader>
+            <div className="event-content">
             {displayRequests}
+            </div>
             </div> 
         )
     } else if (displayRequests.length === 0 && displayAccepted.length === 0) {
         return (
-        <div className="event">
+        <div className="event-content">
             <EventHeader>You currently have no upcoming events.</EventHeader>
         </div>
         )
     } else if (displayRequests.length === 0 && displayAccepted.length > 0 ) {
         return (      
-            <div className="event"> 
-                <div className="container">
+            <div > 
+                <div>
                      <EventHeader>You currently have no requested events.</EventHeader>
                 </div>
-                <div className="container">
+                <div className="event-content">
                 <EventHeader>Here are your upcoming events:</EventHeader>
                  {displayAccepted}
                 </div>
@@ -84,12 +86,12 @@ function RequestContainer ({currentUser}) {
     }
     
     return (
-        <div className="event">
-            <div className="container">
+        <div className="event-content">
+            <div >
             <EventHeader>You have been requested for the following events:</EventHeader>
             {displayRequests}
             </div>
-            <div className="container">
+            <div className="event-content">
             <EventHeader>Here are your upcoming events:</EventHeader>
             {displayAccepted}
             </div>

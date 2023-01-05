@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const StyledButton = styled.button`
 	border-radius: 20px;
-	/* background-color: #FF4B2B; */
+	background-color: #FF4B2B;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -19,7 +19,7 @@ const StyledButton = styled.button`
 const EventHeader = styled.h2`
 padding-top: 5px;
 margin: 2px auto;
-font-size:20px; color:#222; letter-spacing:1px;
+font-size:25px; color:#222; letter-spacing:1px;
 font-family:"Playfair Display", serif; font-weight:400;
 color: rgb(128, 106, 106);
 `
@@ -84,20 +84,20 @@ function EventCard({event, handleDelete, handleUpdate}) {
 
 
     return (
-        <div>
+        <div className="event-content">
             <div >
             <EventHeader>{event.title}</EventHeader>
-            <p>Attending: {event.amount_of_people}</p>
-            <p>Date: {event.date}</p>
-            <p>Cuisine: {event.cuisine}</p>
-            <p>Details: {event.description}</p>
+            <p>{event.amount_of_people} Attending<br/>
+            Scheduled for {event.date}<br/>
+            Requested Cuisine: {event.cuisine}<br/>
+            More Details: {event.description}</p>
             <StyledButton className="con_button" onClick={displayChefs}>{showChefs? "Hide Matches" : "View Matches"}</StyledButton>
             <StyledButton onClick={deleteEvent}>Delete</StyledButton>
             <StyledButton onClick={() => editEvent(event.id)}>Edit</StyledButton>
             <br></br>
             {edited?
 
-            <div className="event-log-container">
+            <div className="event-content">
                  <h3>Adjust Event Details</h3>
                  <form onSubmit={handleEdit}>
                            <input
@@ -135,9 +135,13 @@ function EventCard({event, handleDelete, handleUpdate}) {
             }
             {showChefs? 
 
-            <div className="container">
+        <div className="event-content">
+            <div>
                 <h2 style={{ color: "lightcoral", padding: "20px"}}>Chefs matched to your event:</h2>
+                <div className='chefcontain'>
             {displayChefMatch}
+                </div>
+            </div>
             </div>
             :
             <></>

@@ -20,6 +20,7 @@ const StyledButton = styled.button`
   const EventHeader = styled.h3`
   padding-top: 30px;
   padding-left: 30px;
+  padding-bottom: 30px;
   margin: 10px auto;
   position: relative;
   font-size:30px; text-transform:uppercase; color:#222; letter-spacing:1px;
@@ -128,12 +129,12 @@ function handleChange(e) {
 
 return (
 
-  <div> 
+  <div className="event-container"> 
         {!isAChef ?
 
             <div>
                <EventHeader>Your Events</EventHeader>
-               <button onClick={() => setIsClicked(!clicked)}>Create a New Event</button>
+               <button style={{float: "right"}} onClick={() => setIsClicked(!clicked)}>Create a New Event</button>
                {clicked? 
 
                 <div className="event-log-container">
