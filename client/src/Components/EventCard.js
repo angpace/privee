@@ -19,7 +19,7 @@ const StyledButton = styled.button`
 const EventHeader = styled.h2`
 padding-top: 5px;
 margin: 2px auto;
-font-size:30px; color:#222; letter-spacing:1px;
+font-size:20px; color:#222; letter-spacing:1px;
 font-family:"Playfair Display", serif; font-weight:400;
 color: rgb(128, 106, 106);
 `
@@ -84,8 +84,8 @@ function EventCard({event, handleDelete, handleUpdate}) {
 
 
     return (
-        <div className="event">
-            <div className="container">
+        <div>
+            <div >
             <EventHeader>{event.title}</EventHeader>
             <p>Attending: {event.amount_of_people}</p>
             <p>Date: {event.date}</p>
@@ -94,10 +94,11 @@ function EventCard({event, handleDelete, handleUpdate}) {
             <StyledButton className="con_button" onClick={displayChefs}>{showChefs? "Hide Matches" : "View Matches"}</StyledButton>
             <StyledButton onClick={deleteEvent}>Delete</StyledButton>
             <StyledButton onClick={() => editEvent(event.id)}>Edit</StyledButton>
+            <br></br>
             {edited?
 
-            <>
-                 <h2>Adjust Event Details</h2>
+            <div className="event-log-container">
+                 <h3>Adjust Event Details</h3>
                  <form onSubmit={handleEdit}>
                            <input
                                onChange={handleChange}
@@ -127,7 +128,7 @@ function EventCard({event, handleDelete, handleUpdate}) {
                            <StyledButton>Update Event</StyledButton>
                        </form>
 
-            </>
+            </div>
                        :
 
                        <></>

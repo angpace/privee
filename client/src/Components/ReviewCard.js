@@ -33,10 +33,12 @@ function ReviewCard ({r, currentUser, handleDelete}) {
     
 
     return ( 
-        <div>
-            <h3>{r.title} {r.rating}</h3>
-            <p>{r.event.title}</p>
-            <p>{r.description}</p>
+        <div className="reviewCard">
+            <p>You were given the following feedback for <strong>{r.event.title}.</strong>
+                <br></br>
+                <br></br><strong>{r.title}</strong>
+                <br></br>Rating: {r.rating}/5
+                <br></br>{r.description}</p>
         </div>
     )
 }

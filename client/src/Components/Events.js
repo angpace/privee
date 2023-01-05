@@ -17,10 +17,12 @@ const StyledButton = styled.button`
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
   `
-  const EventHeader = styled.h2`
-  padding-top: 5px;
+  const EventHeader = styled.h3`
+  padding-top: 30px;
+  padding-left: 30px;
   margin: 10px auto;
-  font-size:40px; color:#222; letter-spacing:1px;
+  position: relative;
+  font-size:30px; text-transform:uppercase; color:#222; letter-spacing:1px;
   font-family:"Playfair Display", serif; font-weight:400;
   color: rgb(128, 106, 106);
   
@@ -134,7 +136,7 @@ return (
                <button onClick={() => setIsClicked(!clicked)}>Create a New Event</button>
                {clicked? 
 
-                <div>
+                <div className="event-log-container">
                   <h3>Enter event details below.</h3>
                   <form onSubmit={handleSubmit}>
                           <input
@@ -171,8 +173,9 @@ return (
                       <></>
 
                }
-              
+                  
                         {renderEvents}
+                       
             </div>
 
             :
