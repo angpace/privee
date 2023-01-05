@@ -585,6 +585,9 @@ input {
 	transition: 0.3s;
 	width: 30%;
 	display: inline-block;
+	padding-bottom: 10px;
+	font-size: small;
+	text-align: center;
   }
   
   .card:hover {
@@ -644,7 +647,7 @@ input {
   }
 
   .profile {
-	width: 90%;
+	width: 80%;
 	margin: auto;
 	display: flex;
 	height: fit-content;
@@ -658,4 +661,27 @@ input {
 
   .event-log-container{
 	max-width: 500px;
+  }
+
+  .event-container{
+	display: flex;
+	justify-content: space-around;
+	padding: 10px;
+  }
+
+  .event-content {
+	width: 600px;
+	padding: 15px;
+	padding-top: 30px;
+  }
+
+  .profile-card{
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+		width: 100%;
+		/* display: inline-block; */
+		padding-bottom: 10px;
+		font-size: small;
+		text-align: center;
+	  
   }

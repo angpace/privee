@@ -48,7 +48,7 @@ function EventPreview ({event, currentUser, handleUpdate}) {
 
 
     return (
-        <div>
+        <div >
         <div onClick={() => isClicked(!clicked)} className="card" style={{width: "200px", padding: "12px"}}>
             <h3>{event.title}</h3>
             <p>{event.date}</p>
