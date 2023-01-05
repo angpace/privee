@@ -28,7 +28,7 @@ function ChefCard({chef, event, StyledButton}){
     
 
     return (
-        <div className='card'>
+        <div className='chefMatch'>
             <div className='cardContainer'>
             <h3>{chef.name}</h3>
             <img src={chef.image} alt="Chef" style={{width: "100%"}}/>

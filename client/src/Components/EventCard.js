@@ -138,7 +138,9 @@ function EventCard({event, handleDelete, handleUpdate}) {
         <div className="event-content">
             <div>
                 <h2 style={{ color: "lightcoral", padding: "20px"}}>Chefs matched to your event:</h2>
+                <div className='chefcontain'>
             {displayChefMatch}
+                </div>
             </div>
             </div>
             :
