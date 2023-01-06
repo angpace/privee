@@ -157,7 +157,7 @@ return (
                           />
                           <input
                               onChange={handleChange}
-                              placeholder="Tell us about your Event. Please be sure to inclide your cuisine type."
+                              placeholder="Tell us about your Event."
                               name="description"
                           />
                           <input

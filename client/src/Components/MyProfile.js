@@ -1,6 +1,15 @@
 import { useEffect, useState } from "react";
 import MyReviews from "./MyReviews";
+import styled from "styled-components";
 
+const EventHeader = styled.h2`
+padding-top: 5px;
+margin: 2px auto;
+font-size:30px; color:#222; letter-spacing:1px;
+font-family:"Playfair Display", serif; font-weight:400;
+color: rgb(128, 106, 106);
+
+`
 
 function MyProfile({currentUser}) {
     const [events, setEvents] = useState([])
@@ -23,7 +32,7 @@ function MyProfile({currentUser}) {
         <div className="profile">
         <div className="card">
             <div className="cardContainer">
-            <h3>Welcome {currentUser.name}!</h3>
+            <EventHeader>Welcome, {currentUser.name}!</EventHeader>
             <img style={{width: "100%"}} src={currentUser.image} alt="profile"/>
             <h3>My contact information</h3>
             <p>{currentUser.email}</p>
