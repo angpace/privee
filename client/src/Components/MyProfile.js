@@ -35,8 +35,8 @@ function MyProfile({currentUser}) {
             <EventHeader>Welcome, {currentUser.name}!</EventHeader>
             <img style={{width: "100%"}} src={currentUser.image} alt="profile"/>
             <h3>My contact information</h3>
-            <p>{currentUser.email}</p>
-            <p>{currentUser.phone}</p>
+            <p><strong>Email</strong><br/>{currentUser.email}</p>
+            <p><strong>Phone</strong><br/>{currentUser.phone}</p>
             </div>
 
         </div>
