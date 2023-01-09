@@ -21,14 +21,13 @@ function About () {
                <div className="about-container">
                     <div className="about-content">
                          <EventHeader>What is Privée?</EventHeader>
-                         <p> "Privée is a platform designed to match clients to private chefs based on their events needs. quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                         <p> Privée is a platform designed to match clients to private chefs based on their events needs. Hosting events are hard enough without dealing with the menu- so leave it to us.  Let us bring the restaurant to you.
                          </p>
                     </div>
                     <div className="about-content" >
                          <EventHeader style={{float: 'center'}} >How to use Privée?</EventHeader>
-                         <p> "Its as easy as creating an account and thats it. Post your event and well handle the food- so you can really enjoy. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                     Let us bring the restaurant to you."
+                         <p> Its as easy as creating an account. Follow the prompts on our sign up page to choose your account type, fill out your details accordingly. Clients can post and send requests to Chefs based on their matches. As a Chef you can accept or request events based on your schedule. Now that's what we call a win-win. 
+                    
                          </p>
                 </div>
                 </div>

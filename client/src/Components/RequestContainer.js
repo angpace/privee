@@ -5,7 +5,7 @@ import styled from "styled-components";
 const EventHeader = styled.h2`
 padding-top: 5px;
 margin: 2px auto;
-font-size:30px; color:#222; letter-spacing:1px;
+font-size:30px; color:#222;
 font-family:"Playfair Display", serif; font-weight:400;
 color: rgb(128, 106, 106);
 
@@ -73,8 +73,8 @@ function RequestContainer ({currentUser}) {
         )
     } else if (displayRequests.length === 0 && displayAccepted.length > 0 ) {
         return (      
-            <div > 
-                <div>
+            <div className="event-content"> 
+                <div >
                      <EventHeader>You currently have no requested events.</EventHeader>
                 </div>
                 <div className="event-content">

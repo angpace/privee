@@ -35,8 +35,8 @@ function deleteRequest(e){
                 <div >
                     <div className="event-content">
                             <EventHeader>{event.title}</EventHeader>
-                            <p>{event.cuisine}<br/>
-                            {event.description}<br/>
+                            <p><strong>Requested Cuisine:</strong> {event.cuisine}<br/>
+                            <strong>Event Details:</strong> {event.description}<br/>
                             {event.date}</p>
                                 <button onClick={deleteRequest}>Cancel</button>
                      </div>
@@ -50,8 +50,8 @@ function deleteRequest(e){
         <div >
             <div className="event-content">
                 <EventHeader>{event.title}</EventHeader>
-                <p>{event.cuisine}<br/>
-                {event.description}<br/>
+                <p><strong>Requested Cuisine:</strong> {event.cuisine}<br/>
+                <strong>Event Details:</strong> {event.description}<br/>
                 {event.date}</p>
                     <button onClick={handleAccept}>Accept</button>
                     <button onClick={deleteRequest}>Reject</button>

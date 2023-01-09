@@ -87,10 +87,10 @@ function EventCard({event, handleDelete, handleUpdate}) {
         <div className="event-content">
             <div >
             <EventHeader>{event.title}</EventHeader>
-            <p>{event.amount_of_people} Attending<br/>
-            Scheduled for {event.date}<br/>
-            Requested Cuisine: {event.cuisine}<br/>
-            More Details: {event.description}</p>
+            <p><strong>Attending:</strong> {event.amount_of_people} people<br/>
+            <strong>Scheduled for</strong> {event.date}<br/>
+            <strong>Requested Cuisine:</strong> {event.cuisine}<br/>
+            <strong>More Details:</strong> {event.description}</p>
             <StyledButton className="con_button" onClick={displayChefs}>{showChefs? "Hide Matches" : "View Matches"}</StyledButton>
             <StyledButton onClick={deleteEvent}>Delete</StyledButton>
             <StyledButton onClick={() => editEvent(event.id)}>Edit</StyledButton>

@@ -660,7 +660,9 @@ input {
   }
 
   .event-log-container{
+	padding: 35px;
 	max-width: 500px;
+	margin: auto;
   }
 
   .event-container{
