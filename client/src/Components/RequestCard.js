@@ -28,8 +28,6 @@ function deleteRequest(e){
         .then(r => r.json())
         .then(data => handleUpdate(data))}
 
-        console.log(re)
-
         if (re.accepted === true ) {
             return (
                 <div >

@@ -39,7 +39,6 @@ function App() {
 
   function onLogin(user) {
     setCurrentUser(user)
-    console.log(user)
     navigate("/")
   }
 
