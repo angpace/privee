@@ -39,9 +39,6 @@ function Login({onLogin}) {
           else if (res.status === 401) { 
             alert.show("Invalid Username or Password.")
         
-          }
-          else {
-            console.log("yikes")
           }})
 
         }
