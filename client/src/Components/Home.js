@@ -14,10 +14,10 @@ function Home (){
       
         <div className="slider">
           <div >
-          <img src="https://hips.hearstapps.com/esquire/assets/17/20/1495206144-es-051917-is-noma-worth-it-a.jpg" alt="straw"/>
+          <img src="https://livunltd.com/wp-content/uploads/2022/05/resident.png" alt="straw"/>
               </div>
           <div >
-                  <img src="https://livunltd.com/wp-content/uploads/2022/05/resident.png" alt="straw"/>
+                  <img src="https://hips.hearstapps.com/esquire/assets/17/20/1495206144-es-051917-is-noma-worth-it-a.jpg" alt="straw"/>
               </div>
           <div >
                   <img src="https://static.dezeen.com/uploads/2018/09/noma-big-architecture-interiors-restaurant-copenhagen-denmark_dezeen_sq.jpg" alt="straw"/>

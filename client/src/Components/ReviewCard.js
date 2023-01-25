@@ -29,8 +29,6 @@ function ReviewCard ({r, currentUser, handleDelete}) {
             </div>
     ) }
 
-    
-    
 
     return ( 
         <div className="reviewCard">

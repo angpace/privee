@@ -9,7 +9,7 @@ ul {
     margin: 5px auto;
     width: 100%;
     list-style: none;
-    background-color: rgba(172, 109, 112, 0.247);
+    background-color: rgba(68, 107, 206, 0.247);
 }
 
 li {
@@ -19,7 +19,7 @@ li {
 
 li a{
     text-decoration: none;
-    color: rgb(128, 106, 106);
+    color: rgb(106, 117, 128);
     font-family: "Quicksand";
     font-weight: lighter;
     transition: 1s;
@@ -29,7 +29,7 @@ li a{
 li a:hover {
     transition: 1s;
     background: rgba(255,255,255,0.7);
-    color: #000;
+    color: rgba(81, 88, 177, 0.247);
 }
 
 .logo {
@@ -37,7 +37,7 @@ li a:hover {
     float: left;
     font-size:50px; text-transform:uppercase; color:#222; letter-spacing:2px;
     font-family:"Playfair Display", serif; font-weight:400;
-    color: rgb(128, 106, 106);
+    color: rgb(177, 36, 36);
 }
 /* .nav a {
 	float: left;
@@ -66,7 +66,7 @@ li a:hover {
   .navbar a:hover, .dropbtn:hover {
 	 transition: 1s;
     background: rgba(255,255,255,0.7);
-    color: #000;
+    color: rgba(81, 88, 177, 0.247);
   }
   
   .dropdown-content {
@@ -107,10 +107,10 @@ li a:hover {
 .top-banner-text,
 .hidden {
   font-family: "Magda", "sans-serif";
-  font-size: 14px;
+  font-size: 16px;
   line-height: 30px;
   text-align: center;
-  background-color:  rgba(172, 109, 112, 0.247);
+  background-color:  white;
   color:rgb(173, 104, 104);
 }
 
