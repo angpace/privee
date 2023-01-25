@@ -2,6 +2,7 @@ puts "Seeding data!"
 
 User.destroy_all
 Event.destroy_all
+Photo.destroy_all
 
 #Chefs 
  angela = User.create(name: "Angela Pace", email: "angelapaceaustralia@gmail.com", password: "123456",
