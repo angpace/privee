@@ -13,6 +13,9 @@ function Home (){
         <s id="s4"></s>
       
         <div className="slider">
+        <div >
+              <img src="https://www.washingtonian.com/wp-content/uploads/2021/04/171101_ilili_Menu-59.jpg" alt="straw"/>
+              </div>
           <div >
           <img src="https://livunltd.com/wp-content/uploads/2022/05/resident.png" alt="straw"/>
               </div>
@@ -21,9 +24,6 @@ function Home (){
               </div>
           <div >
                   <img src="https://static.dezeen.com/uploads/2018/09/noma-big-architecture-interiors-restaurant-copenhagen-denmark_dezeen_sq.jpg" alt="straw"/>
-              </div>
-              <div >
-              <img src="https://www.washingtonian.com/wp-content/uploads/2021/04/171101_ilili_Menu-59.jpg" alt="straw"/>
               </div>
         </div>
         
